@@ -1,0 +1,24 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+    
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.input :title, label: "Product Name"%>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    
+    <%= f.fields_for :images do |builder| %>
+      <%= render 'image_field', f: builder %>
+    <% end %>
+    
+    
+    
+    
+
+  
+  <%= f.error :base %>
+
+  <div class="row navigation">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', products_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

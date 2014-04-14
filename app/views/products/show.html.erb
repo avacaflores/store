@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Product Details</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Product:</strong></dt>
+  <dd><%= @product.title %></dd>
+  <dt><strong>Description:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong>Price :</strong></dt>
+  <dd>$ <%= @product.price %></dd>
+  <dt><strong>Images:</strong></dt>
+  <% @product.images.each do |i|%>
+  <% if i.image_file_name != nil %>
+  <dd><div class="thumbnail"><%= image_tag(i.image.url(:thumb)) %></div></dd>
+  <% end %>
+  <% end %>
+  <dt><dd>
+    <div class="btn-group">
+      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-xs btn-default' %>
+      <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+    </div>
+  </dd></dt>
+</dl>
+<div class="row navigation">
+  <%= link_to 'Back', products_path, class: 'btn btn-default' %>
+</div>

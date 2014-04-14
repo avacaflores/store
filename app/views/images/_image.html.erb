@@ -1,0 +1,10 @@
+<div id="images">
+	<%= div_for image do %>
+		<%= image.url %> - type: <%= image.use %>
+    <span class='actions'>
+          <%= link_to 'Delete', product_images_path(:product_id => @product,
+    :id => image), confirm: 'Are you sure?', method: :delete %>
+        </span>
+	<% end %>
+</div>
+

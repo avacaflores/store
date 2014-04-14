@@ -1,0 +1,6 @@
+<fielset>
+  <%= image_tag f.object.image.url(:thumb) if f.object.image_file_name %>
+  <%= f.file_field :image, :class => 'btn' %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Image", '#', class: "remove_fields" %>
+</fielset>
