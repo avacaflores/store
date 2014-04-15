@@ -5,20 +5,15 @@
     <%= f.input :title, label: "Product Name"%>
     <%= f.input :description %>
     <%= f.input :price %>
-    
-    <%= f.fields_for :images do |builder| %>
-      <%= render 'image_field', f: builder %>
-    <% end %>
-    
-    
-    
-    
+    <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
+    <%= f.file_field :photo, class: 'filestyle' %>
 
-  
+
+    
   <%= f.error :base %>
 
-  <div class="row navigation">
+  <span class="row_buttons">
     <%= f.button :submit, class: 'btn btn-primary' %>
     <%= link_to 'Cancel', products_path, class: 'btn btn-default' %>
-  </div>
+  </span>
 <% end %>

@@ -89,3 +89,15 @@ input {
 input.btn {
 width: auto;
 }
+input[type="file"] {
+width: auto;
+}
+
+.row_buttons {
+  display: block;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 5px;
+}

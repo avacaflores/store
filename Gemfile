@@ -10,17 +10,13 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~>3.1.1'
-
-# gem "therubyracer"
-# gem "less-rails"
-# gem "twitter-bootstrap-rails"
 gem 'bootstrap-filestyle-rails'
 
-gem "paperclip", "~> 4.1"
+gem 'jquery-turbolinks'
 
+gem "paperclip", "~> 4.1"
 gem 'simple_form'
 
-gem 'jquery-fileupload-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

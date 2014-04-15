@@ -11,8 +11,8 @@ module ApplicationHelper
   end
   
   def main_image(product)
-    i = product.images.first 
-    i.image.url(:thumb) unless i.blank?
+    #i = product.images.first 
+    product.photo.url(:thumb) unless product.photo.blank?
   end
   
   
