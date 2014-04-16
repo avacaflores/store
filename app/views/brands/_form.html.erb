@@ -1,0 +1,17 @@
+<%= simple_form_for @brand, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+    
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.input :name, label: "Brand Name"%>    
+    <%= f.label "Image" %>
+    <%= f.file_field :photo, class: 'filestyle' %>
+    <%= image_tag @brand.photo.url(:thumb) if @brand.photo_file_name %>
+
+
+  <%= f.error :base %>
+
+  <span class="row_buttons">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', brands_path, class: 'btn btn-default' %>
+  </span>
+<% end %>

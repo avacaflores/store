@@ -1,13 +1,17 @@
 <%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
-    
+
     <%= render 'shared/error_messages', object: f.object %>
     
     <%= f.input :title, label: "Product Name"%>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
-    <%= f.file_field :photo, class: 'filestyle' %>
+    <%= f.association :brand %>
 
+    
+    
+    <%= f.text :description %>
+    <%= f.input :price %>
+    <%= f.label "Image" %>
+    <%= f.file_field :photo, class: 'filestyle' %>
+    <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
 
     
   <%= f.error :base %>
