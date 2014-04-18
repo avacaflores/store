@@ -1,26 +1,24 @@
 <div class="page-header">
   <h1>Product Details</h1>
 </div>
-<dl class="dl-horizontal">
+<dl class="dl-horizontal show-record">
   <dt><strong>Product:</strong></dt>
   <dd><%= @product.title %></dd>
+  <%= row_title 'Part number' %>
+  <%= row_content @product.part_number %>
+  <dt><strong>Brand:</strong></dt>
+  <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
   <dt><strong>Description:</strong></dt>
-  <dd><%= @product.description %></dd>
-  <dt><strong>Price :</strong></dt>
-  <dd>$ <%= @product.price %></dd>
-  <dt><strong>Images:</strong></dt>
-  <% @product.images.each do |i|%>
-  <% if i.image_file_name != nil %>
-  <dd><div class="thumbnail"><%= image_tag(i.image.url(:thumb)) %></div></dd>
-  <% end %>
-  <% end %>
-  <dt><dd>
-    <div class="btn-group">
-      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-xs btn-default' %>
-      <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-    </div>
-  </dd></dt>
+  <dd class: "strong"><%= simple_format(@product.description) %></dd>
+  <dt><strong>Min price:</strong></dt>
+  <dd><%= number_to_currency(@product.min_price) %></dd>
+  <dt><strong>Price:</strong></dt>
+  <dd><%= number_to_currency(@product.price) %></dd>
+  <dt><strong>Image:</strong></dt>
+  <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
 </dl>
 <span class="row_buttons">
   <%= link_to 'Back', products_path, class: 'btn btn-default' %>
+  <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-primary' %>
+  <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 </span>

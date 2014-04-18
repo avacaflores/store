@@ -1,10 +1,10 @@
 Store::Application.routes.draw do
-  resources :brands
+  
 
   root :to => "products#index"
-  resources :products do
-    resources :images
-  end
+  resources :products
+  resources :brands
+  
   resources :front_end
   resources :users  
   resource :session, :only => [:new,:create,:destroy]

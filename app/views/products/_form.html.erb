@@ -1,17 +1,17 @@
-<%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+<div class="col-md-8 col-md-offset-2">
+  <%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
 
-    <%= render 'shared/error_messages', object: f.object %>
+  <%= render 'shared/error_messages', object: f.object %>
     
-    <%= f.input :title, label: "Product Name"%>
-    <%= f.association :brand %>
-
-    
-    
-    <%= f.text :description %>
-    <%= f.input :price %>
-    <%= f.label "Image" %>
-    <%= f.file_field :photo, class: 'filestyle' %>
-    <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
+  <%= f.input :title, label: "Product"%>
+  <%= f.input :part_number %>
+  <%= f.association :brand %>
+  <%= f.input :description %>
+  <%= f.input :min_price %>
+  <%= f.input :price %>
+  <%= f.label "Image" %>
+  <%= f.file_field :photo, class: 'filestyle' %>
+  <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
 
     
   <%= f.error :base %>
@@ -20,4 +20,5 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
     <%= link_to 'Cancel', products_path, class: 'btn btn-default' %>
   </span>
-<% end %>
+  <% end %>
+</div>
