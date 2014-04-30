@@ -9,6 +9,7 @@
   <%= f.input :description %>
   <%= f.input :min_price %>
   <%= f.input :price %>
+  <%= f.association :section %>
   <%= f.label "Image" %>
   <%= f.file_field :photo, class: 'filestyle' %>
   <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>

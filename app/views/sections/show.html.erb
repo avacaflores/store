@@ -1,0 +1,12 @@
+<div class="col-md-6 col-md-offset-3">
+  <h3>Section Details</h3>
+  <dl class="dl-horizontal">
+    <dt><strong>Section:</strong></dt>
+    <dd><%= @section.name %></dd>
+  </dl>
+  <span class="row_buttons">
+    <%= link_to 'Sections List', sections_path, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_section_path(@section), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', section_path(@section), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </span>
+</div>

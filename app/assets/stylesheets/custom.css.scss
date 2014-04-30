@@ -112,6 +112,23 @@ input[type="file"] {
   border-radius: 5px;
 }
 
+.item_buttons {
+ text-align: right;
+}
+
+
+// action box
+
+.action_box {
+  display: block;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  background-color: blue;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+
 // table for show
 
 dl dt {
@@ -129,4 +146,17 @@ dl dd {
 #photo_row {
   background-color: white;
   border: 1px solid white;
+}
+
+
+// center label
+
+.center_label {
+ text-align: center;
+}
+
+// filters
+
+.filters {
+  margin: 10px;
 }

@@ -9,11 +9,13 @@
   <dt><strong>Brand:</strong></dt>
   <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
   <dt><strong>Description:</strong></dt>
-  <dd class: "strong"><%= simple_format(@product.description) %></dd>
+  <dd><%= simple_format(@product.description) %></dd>
   <dt><strong>Min price:</strong></dt>
   <dd><%= number_to_currency(@product.min_price) %></dd>
   <dt><strong>Price:</strong></dt>
   <dd><%= number_to_currency(@product.price) %></dd>
+  <dt><strong>Section:</strong></dt>
+  <dd><%= @product.section.name unless @product.section.nil? %></dd>
   <dt><strong>Image:</strong></dt>
   <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
 </dl>

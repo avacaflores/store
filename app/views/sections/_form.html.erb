@@ -1,0 +1,16 @@
+<%= simple_form_for @section, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+    
+<%= render 'shared/error_messages', object: f.object %>
+    
+<%= f.input :name, :error => false %>    
+
+<%= f.error :base %>
+
+<span class="row_buttons">
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', sections_path, class: 'btn btn-default' %>
+</span>
+<% end %>
+
+
+

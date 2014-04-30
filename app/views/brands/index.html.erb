@@ -1,29 +1,30 @@
-<div class="page-header">
-  <h1>Brands</h1>
+<div class="col-md-6 col-md-offset-3">
+  <h3>Brands</h3>
+  <table class="table table-striped">
+    <tbody>
+      <% @brands.each do |brand| %>
+      <tr>
+        <td  class='col-md-3'>
+          <% if brand.photo.present? %>
+          <div class="thumbnail">
+            <%= link_to image_tag(brand.photo.url(:thumb)), brand_path(brand) %>
+          </div>
+          <% end %>
+        </td>
+        <td><strong><%= brand.name %></strong><br>
+          <div class="item_buttons">
+            <div class="btn-group">
+              <%= link_to 'Edit', edit_brand_path(brand), class: 'btn btn-xs btn-default' %>
+              <%= link_to 'Delete', brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <span class="row_buttons">
+    <%= link_to 'New Brand', new_brand_path, class: 'btn btn-primary' %>
+  </span>
 </div>
-<table class="table table-striped">
-  <tbody>
-    <% @brands.each do |brand| %>
-    <tr>
-      <td class='col-md-2'>
-        <% if brand.photo.present? %>
-        <div class="thumbnail">
-          <%= link_to image_tag(brand.photo.url(:thumb)), brand_path(brand) %>
-        </div>
-        <% end %>
-      </td>
-      <td><strong><%= brand.name %></strong><br>
-        <div class="btn-group">
-          <%= link_to 'Show', brand_path(brand), class: 'btn btn-xs btn-default' %>
-          <%= link_to 'Edit', edit_brand_path(brand), class: 'btn btn-xs btn-default' %>
-          <%= link_to 'Delete', brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-        </div>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<span class="row_buttons">
-  <%= link_to 'New Brand', new_brand_path, class: 'btn btn-primary' %>
-</span>
 

@@ -1,15 +1,27 @@
 Store::Application.routes.draw do
   
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create 
+    get 'logout' => :destroy
+  end
+
+  #get "admin/index"
+  
+  resources :users
 
   root :to => "products#index"
   resources :products
   resources :brands
-  
+
+  get 'sections/:id/add_filter' => 'sections#add_filter', as: 'add_filter_sections'
+  get 'sections/:name/remove_filter' => 'sections#remove_filter', as: 'remove_filter_sections'
+  get 'sections/remove_all_filters' => 'sections#remove_all_filters', as: 'remove_all_filters_sections'
+
+  resources :sections
+
   resources :front_end
-  resources :users  
-  resource :session, :only => [:new,:create,:destroy]
-  get '/login' => "sessions#new", :as => "login"
-  get 'logout' => "session#destroy", :as => "logout"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

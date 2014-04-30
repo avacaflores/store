@@ -1,0 +1,12 @@
+<div class="container">
+  <% if session[:sections_filter].present? && session[:sections_filter].count >0 %>
+  Sections Filter: 
+  <div class="btn-group">
+    <% session[:sections_filter].each do |item| %>
+    <%= link_to item, remove_filter_sections_path(item), class: 'btn btn-xs btn-default' %>
+    <% end %>
+    <%= link_to 'Remove All', remove_all_filters_sections_path, class: 'btn btn-xs btn-warning' %>
+  </div>
+  <% end %>
+</div>
+

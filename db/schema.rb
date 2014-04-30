@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417234657) do
+ActiveRecord::Schema.define(version: 20140430013352) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140417234657) do
     t.integer  "brand_id"
     t.string   "part_number"
     t.decimal  "min_price"
+    t.integer  "section_id"
   end
 
   create_table "profiles", force: true do |t|
@@ -69,9 +70,16 @@ ActiveRecord::Schema.define(version: 20140417234657) do
     t.datetime "updated_at"
   end
 
+  create_table "sections", force: true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "hashed_password"
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
