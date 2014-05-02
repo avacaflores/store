@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430013352) do
+ActiveRecord::Schema.define(version: 20140501032818) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 20140430013352) do
     t.string   "part_number"
     t.decimal  "min_price"
     t.integer  "section_id"
+    t.decimal  "offer_price"
+    t.boolean  "offer"
+    t.boolean  "promotion"
   end
 
   create_table "profiles", force: true do |t|

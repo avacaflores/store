@@ -75,8 +75,15 @@ textarea{
   height: 100px;
 }
 
-#product_price, #product_min_price{
+// size of amounts
+
+#product_price, #product_min_price, #product_offer_price {
   width: 50%;
+}
+
+// offer price
+.offer {
+  color: red;
 }
 
 
@@ -159,4 +166,10 @@ dl dd {
 
 .filters {
   margin: 10px;
+}
+
+.imgback {
+  background-image: image-url('background1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }

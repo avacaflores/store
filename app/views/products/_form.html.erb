@@ -1,25 +1,28 @@
-<div class="col-md-8 col-md-offset-2">
-  <%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
 
-  <%= render 'shared/error_messages', object: f.object %>
+<%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+
+<%= render 'shared/error_messages', object: f.object %>
     
-  <%= f.input :title, label: "Product"%>
-  <%= f.input :part_number %>
-  <%= f.association :brand %>
-  <%= f.input :description %>
-  <%= f.input :min_price %>
-  <%= f.input :price %>
-  <%= f.association :section %>
-  <%= f.label "Image" %>
-  <%= f.file_field :photo, class: 'filestyle' %>
-  <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
+<%= f.input :title, label: "Product"%>
+<%= f.input :part_number %>
+<%= f.association :brand %>
+<%= f.input :description %>
+<%= f.input :min_price %>
+<%= f.input :price %>
+<%= f.input :offer_price %>
+<%= f.input :offer, as: :boolean, checked_value: true, unchecked_value: false %>
+<%= f.input :promotion, as: :boolean, checked_value: true, unchecked_value: false %>
+<%= f.association :section %>
+<%= f.label "Image" %>
+<%= f.file_field :photo, class: 'filestyle' %>
+<%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
 
     
-  <%= f.error :base %>
+<%= f.error :base %>
 
-  <span class="row_buttons">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-    <%= link_to 'Cancel', products_path, class: 'btn btn-default' %>
-  </span>
-  <% end %>
-</div>
+<span class="row_buttons">
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', products_path, class: 'btn btn-default' %>
+</span>
+<% end %>
+

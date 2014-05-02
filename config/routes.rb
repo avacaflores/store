@@ -8,11 +8,17 @@ Store::Application.routes.draw do
 
   #get "admin/index"
   
-  resources :users
+  
 
-  root :to => "products#index"
+  root :to => "static_pages#home"
+ 
+  get 'products/promotion' => 'products#promotion'
   resources :products
+ 
+  
   resources :brands
+
+  resources :users
 
   get 'sections/:id/add_filter' => 'sections#add_filter', as: 'add_filter_sections'
   get 'sections/:name/remove_filter' => 'sections#remove_filter', as: 'remove_filter_sections'

@@ -1,0 +1,16 @@
+<% @products.each do |product| %>
+<% if main_image(product) %>
+<div class="thumbnail">
+  <strong><%= product.title %></strong>
+  <%= link_to image_tag(main_image(product)), product_path(product) %>
+  <%= number_to_currency(product.price) %>
+  <% if product.offer %>
+  <span class="offer">
+    <br>
+    <%= number_to_currency(product.offer_price) %>
+    - Offer price
+  </span>
+  <% end %>
+</div>
+<% end %>
+<% end %>
