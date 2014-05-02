@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  skip_before_action :authorize, only: [:index]
+  skip_before_action :authorize, only: [:index, :show, :promotion]
   
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -12,6 +12,10 @@ class ProductsController < ApplicationController
     else
       @products = Product.joins(:section).where('sections.name' => session[:sections_filter])
     end
+  end
+  
+  def promotion
+    @products = Product.where('promotion' => true)
   end
 
   # GET /products/1
@@ -77,7 +81,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :brand_id, :section_id, :category_ids => [],
+      params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id, :category_ids => [],
       :images_attributes => [:id,:url,:use,:image])
     end
 end
