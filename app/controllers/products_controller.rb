@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @sections = Section.all.order(:name)
+    @brands = Brand.all.order(:name)
     if session[:sections_filter].nil?
       @products = Product.all
     else
@@ -81,7 +83,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id, :category_ids => [],
+      params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id,
       :images_attributes => [:id,:url,:use,:image])
     end
 end

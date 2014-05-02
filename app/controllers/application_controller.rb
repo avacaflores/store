@@ -3,13 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  before_action :load_sections
   before_action :authorize
-  
-  def load_sections
-    @sections = Section.all.order(:name)
-    @brands = Brand.all.order(:name)
-  end
   
   protected
   
