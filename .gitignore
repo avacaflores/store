@@ -20,3 +20,20 @@
 
 # Ignore migrations
 /db/migrate/*.rb
+
+# Ignore images
+/public/system/*.*
+/public/assets/*.jpg
+/public/assets/*.png
+/public/assets/*.gif
+
+
+# Ignore other unneeded files.
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
