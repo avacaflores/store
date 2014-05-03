@@ -2,7 +2,7 @@
     
 <%= render 'shared/error_messages', object: f.object %>
     
-<%= f.input :name, :error => false %>    
+<%= f.input :name, error: false %>    
 <%= f.label "Image" %>
 <%= f.file_field :photo, class: 'filestyle' %>
 <%= image_tag @brand.photo.url(:thumb) if @brand.photo_file_name %>

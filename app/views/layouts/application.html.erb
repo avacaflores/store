@@ -12,15 +12,15 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <div class="container">
+  <div class="container content-page">
     <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : name %>">
+    <div class="alert alert-<%= name == "notice" ? "success" : name %>">
       <a class="close" data-dismiss="alert">×</a>
       <%= msg %>
     </div>
     <% end %>
     <div class="row">
-        <%= yield %>
+      <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>

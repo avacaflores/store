@@ -1,6 +1,55 @@
 @import "bootstrap";
 
-body { padding-top: 60px; }
+// General
+
+body {
+  background: url('path.jpg') no-repeat 0 0 fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  //background-image: image-url('path.jpg');
+  //background-repeat: no-repeat;
+  //background-size: 100px;
+  //background: lightgray;
+  padding-top: 50px;
+  margin: 0 0 20px 0;
+  
+  .content-page {
+    background: white;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+
+// Intro page
+
+.intro-body {
+  padding: 8%;
+  
+  .navbar {
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .intro-page {
+    background: white;
+    //border-top: 2px solid darken(lightgray, 10%);
+    border-radius: 5px;
+    padding: 0;
+    
+    .intro-image {
+      width: 100%;
+    }
+  }
+}
+
+
+// Alerts
+.alert {
+  margin: 10px 0 0 0;
+}
+
 
 
 
@@ -27,149 +76,141 @@ h2 {
 }
 
 //p {
-//  font-size: 1.1em;
-//  line-height: 1.7em;
-//}
+  //  font-size: 1.1em;
+  //  line-height: 1.7em;
+  //}
 
 
-/* footer */
+  /* footer */
 
-footer {
-  margin-top: 45px;
-  margin-bottom: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
+  .footer {
+    background: white;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $gray-light;
+    color: $gray-light;
+    a {
+      color: $gray;
+      &:hover {
+        color: $gray-darker;
+      }
     }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
+    small {
       float: left;
-      margin-left: 10px;
+    }
+    ul {
+      float: right;
+      list-style: none;
+      li {
+        float: left;
+        margin-left: 10px;
+      }
     }
   }
-}
 
 
-/* forms */
+// Forms
 
-input, textarea, select, .uneditable-input, #product_brand_id {
-  height: 30px;
-  width: 100%;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  //@include box_sizing;
-}
+input, textarea, select {
+    height: 25px;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin-bottom: 5px;
 
-textarea{
-  height: 100px;
-}
+    textarea{
+      height: 100px;
+    }    
 
-// size of amounts
+    &.filestyle {
+      border: 0px;
+    }
+    
+    &.price-field {
+      width: 50%;
+    }
+    
+    &.boolean-field {
+      width: 20%;
+    }
 
-#product_price, #product_min_price, #product_offer_price {
-  width: 50%;
-}
+    &.btn {
+      height: auto;
+      width: auto;
+    }
 
-// offer price
-.offer {
-  color: red;
-}
-
-
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
   }
-}
+  
+  #error_explanation {
+    color: #f00;
+    ul {
+      list-style: none;
+      margin: 0 0 18px 0;
+    }
+  }
 
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}
+//  .field_with_errors {
+//    @extend .control-group;
+//    @extend .error;
+//  }
 
-input.btn {
-  width: auto;
-}
+  
+  // offer price
+  
+  .offer {
+    color: red;
+  }
 
-input[type="file"] {
-  width: auto;
-}
+  // buttons bar
 
-// buttons bar
+  .row_buttons {
+    display: block;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
 
-.row_buttons {
-  display: block;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  background-color: lightgray;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
+  .btn-to-right {
+    float: right;
+  }
 
-.item_buttons {
- text-align: right;
-}
+  // table for show
 
+  dl dt {
+    padding: 5px;
+  }
 
-// action box
+  dl dd {
+    padding: 5px;
+    margin: 5px;
+    background-color: #F3F3F3;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+  }
 
-.action_box {
-  display: block;
-  margin: 10px 0 10px 0;
-  padding: 10px;
-  background-color: blue;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
-
-// table for show
-
-dl dt {
-  padding: 5px;
-}
-
-dl dd {
-  padding: 5px;
-  margin: 5px;
-  background-color: #F3F3F3;
-  border: 1px solid #F3F3F3;
-  border-radius: 5px;
-}
-
-#photo_row {
-  background-color: white;
-  border: 1px solid white;
-}
+  #photo_row {
+    background-color: white;
+    border: 1px solid white;
+  }
 
 
-// center label
+  // center label
 
-.center_label {
- text-align: center;
-}
+  .center_label {
+    text-align: center;
+  }
 
-// filters
+//  // filters
+//
+//  .filters {
+//    margin: 10px;
+//  }
 
-.filters {
-  margin: 10px;
-}
 
-.imgback {
-  background-image: image-url('background1.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
+
+
+
+

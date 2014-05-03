@@ -3,12 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-jQuery ->
-  $(":file").filestyle(
-    input: false
-    buttonText: 'Choose file'
-    classButton: 'btn btn-default btn-sm'
-  )
+
 
 
      

@@ -30,8 +30,7 @@
           <% end %>
           <% if session[:user_id] %>
             <br>
-            <div class="btn-group">
-              <%= link_to 'Show', product_path(product), class: 'btn btn-xs btn-default' %>
+            <div class="btn-group btn-to-right">
               <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-default' %>
               <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
             </div>

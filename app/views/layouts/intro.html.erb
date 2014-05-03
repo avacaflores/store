@@ -10,20 +10,35 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="imgback">
-  <%= render 'layouts/header' %>
-  <div class="container">
-    <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : name %>">
-      <a class="close" data-dismiss="alert">×</a>
-      <%= msg %>
-    </div>
-    <% end %>
-    <div class="row">
-        <%= yield %>
-    </div>
-    <!-- <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %> -->
-  </div>
+<body class="intro-body">
+  <div class="col-md-12 intro-page">
+  <h1>Store</h1>
+  <img src="/assets/background1.jpg" class="img-responsive intro-image" alt="Responsive image">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Featured Products", products_promotion_path %></li>
+          <li><%= link_to "All Products", products_path %></li>
+          <% if session[:user_id] %>
+            <li><%= link_to "LogOut", logout_path %></li>
+          <% else %>
+           <li><%= link_to "LogIn", login_path %></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
 </body>
 </html>

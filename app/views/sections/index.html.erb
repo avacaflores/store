@@ -5,12 +5,10 @@
       <% @sections.each do |section| %>
       <tr>
         <td><strong><%= section.name %></strong><br>
-          <div class="item_buttons">
-            <div class="btn-group">
+            <div class="btn-group btn-to-right">
               <%= link_to 'Edit', edit_section_path(section), class: 'btn btn-xs btn-default' %>
               <%= link_to 'Delete', section_path(section), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
             </div>
-          </div>
         </td>
       </tr>
       <% end %>

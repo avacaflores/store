@@ -1,23 +1,22 @@
 
-<%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+<%= simple_form_for @product, :html => { :class => 'form-inline', :multipart => true } do |f| %>
 
 <%= render 'shared/error_messages', object: f.object %>
     
-<%= f.input :title, label: "Product"%>
+<%= f.input :title, label: "Product", error: false %>
 <%= f.input :part_number %>
-<%= f.association :brand %>
+<%= f.association :brand, error: false %>
 <%= f.input :description %>
-<%= f.input :min_price %>
-<%= f.input :price %>
-<%= f.input :offer_price %>
-<%= f.input :offer, as: :boolean, checked_value: true, unchecked_value: false %>
-<%= f.input :promotion, as: :boolean, checked_value: true, unchecked_value: false %>
-<%= f.association :section %>
+<%= f.input :min_price, input_html: { class: 'price-field' } %>
+<%= f.input :price, input_html: { class: 'price-field' } %>
+<%= f.input :offer_price, input_html: { class: 'price-field' } %>
+<%= f.input :offer, collection: [['Yes',true] ,['No',false]], input_html: { class: 'boolean-field' } %>
+<%= f.input :promotion, collection: [['Yes',true] ,['No',false]], input_html: { class: 'boolen-field' } %>
+<%= f.association :section, error: false %>
 <%= f.label "Image" %>
 <%= f.file_field :photo, class: 'filestyle' %>
 <%= image_tag @product.photo.url(:thumb) if @product.photo_file_name %>
 
-    
 <%= f.error :base %>
 
 <span class="row_buttons">

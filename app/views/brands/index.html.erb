@@ -12,12 +12,10 @@
           <% end %>
         </td>
         <td><strong><%= brand.name %></strong><br>
-          <div class="item_buttons">
-            <div class="btn-group">
+            <div class="btn-group btn-to-right">
               <%= link_to 'Edit', edit_brand_path(brand), class: 'btn btn-xs btn-default' %>
               <%= link_to 'Delete', brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
             </div>
-          </div>
         </td>
       </tr>
       <% end %>

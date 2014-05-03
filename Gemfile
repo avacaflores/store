@@ -1,9 +1,7 @@
-<<<<<<< Local Changes
-<<<<<<< Local Changes
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -12,7 +10,7 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~>3.1.1'
-gem 'bootstrap-filestyle-rails'
+#gem 'bootstrap-filestyle-rails'
 
 gem 'jquery-turbolinks'
 
@@ -55,9 +53,3 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-
-=======
->>>>>>> External Changes
-=======
->>>>>>> External Changes
