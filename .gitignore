@@ -18,9 +18,6 @@
 # Ignore secret
 # secrets.yml
 
-# Ignore migrations
-/db/migrate/*.rb
-
 # Ignore images
 /public/system/*.*
 /public/assets/*.jpg
