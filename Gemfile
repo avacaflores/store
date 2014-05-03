@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~>3.1.1'
 gem 'jquery-turbolinks'
 
 gem "paperclip", "~> 4.1"
+gem 'aws-sdk'
 gem 'simple_form'
 
 
