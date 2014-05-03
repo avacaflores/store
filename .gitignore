@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore secret
-secrets.yml
+# secrets.yml
 
 # Ignore migrations
 /db/migrate/*.rb
