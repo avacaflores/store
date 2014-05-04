@@ -1,8 +1,7 @@
-<% @products.each do |product| %>
-<% if main_image(product) %>
+<% @products_promo.each do |product| %>
 <div class="thumbnail">
   <strong><%= product.title %></strong>
-  <%= link_to image_tag(main_image(product)), product_path(product) %>
+  <%= link_to image_tag(product.photo.url(:thumb)), product_path(product) %>
   <%= number_to_currency(product.price) %>
   <% if product.offer %>
   <span class="offer">
@@ -11,10 +10,9 @@
     - Offer price
   </span>
   <% end %>
-  <div class="btn-group btn-to-right">
+  <div class="btn-group btn-to-right2">
     <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-default' %>
     <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
   </div>
 </div>
-<% end %>
 <% end %>

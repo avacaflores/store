@@ -21,6 +21,14 @@ body {
     border-radius: 0 0 5px 5px;
     padding: 10px;
     
+    .content-alert {
+      margin: 0 0 10px 0;
+    }
+    
+    .content-filter {
+      margin: 0 0 10px 0;
+    }
+    
     .content-panel {
       padding: 10px;
     }
@@ -41,7 +49,7 @@ body {
     background: white;
     //border-top: 2px solid darken(lightgray, 10%);
     border-radius: 5px;
-    padding: 0 0 0 0;
+    padding: 0;
     
     .intro-image {
       width: 100%;
@@ -86,7 +94,7 @@ h2 {
   //}
 
 
-// Footer
+  // Footer
 
   .footer {
     background: white;
@@ -115,9 +123,9 @@ h2 {
   }
 
 
-// Forms
+  // Forms
 
-input, textarea, select {
+  input, textarea, select {
     width: 100%;
     border: 1px solid #bbb;
     border-radius: 5px;
@@ -142,72 +150,72 @@ input, textarea, select {
 
   }
   
-//  #error_explanation {
-//    color: #f00;
-//    ul {
-//      list-style: none;
-//      margin: 0 0 18px 0;
-//    }
-//  }
+  //  #error_explanation {
+    //    color: #f00;
+    //    ul {
+      //      list-style: none;
+      //      margin: 0 0 18px 0;
+      //    }
+      //  }
 
-//  .field_with_errors {
-//    @extend .control-group;
-//    @extend .error;
-//  }
+      //  .field_with_errors {
+        //    @extend .control-group;
+        //    @extend .error;
+        //  }
 
   
-// offer price
+        // offer price
   
-.offer {
-    color: red;
-}
+        .offer {
+          color: red;
+        }
 
-  // buttons bar
+        // buttons bar
 
-  .row_buttons {
-    display: block;
-    margin: 10px 0 0 0;
-    padding: 10px;
-    background-color: lightgray;
-    border: 1px solid gray;
-    border-radius: 5px;
-  }
+        .row_buttons {
+          display: block;
+          margin: 10px 0 0 0;
+          padding: 10px;
+          background-color: lightgray;
+          border: 1px solid gray;
+          border-radius: 5px;
+        }
 
-  .btn-to-right {
-    float: right;
-  }
+        .btn-to-right {
+          float: right;
+        }
 
-  // table for show
+        // table for show
 
-  dl dt {
-    padding: 5px;
-  }
+        dl dt {
+          padding: 5px;
+        }
 
-  dl dd {
-    padding: 5px;
-    margin: 5px;
-    background-color: #F3F3F3;
-    border: 1px solid #F3F3F3;
-    border-radius: 5px;
-  }
+        dl dd {
+          padding: 5px;
+          margin: 5px;
+          background-color: #F3F3F3;
+          border: 1px solid #F3F3F3;
+          border-radius: 5px;
+        }
 
-  #photo_row {
-    background-color: white;
-    border: 1px solid white;
-  }
+        #photo_row {
+          background-color: white;
+          border: 1px solid white;
+        }
 
 
-  // center label
+        // center label
 
-  .center_label {
-    text-align: center;
-  }
+        .center_label {
+          text-align: center;
+        }
 
-//  // filters
-//
-//  .filters {
-//    margin: 10px;
-//  }
+        //  // filters
+        //
+        //  .filters {
+          //    margin: 10px;
+          //  }
 
 
 

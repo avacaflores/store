@@ -13,12 +13,7 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container content-page">
-    <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == "notice" ? "success" : name %>">
-      <a class="close" data-dismiss="alert">×</a>
-      <%= msg %>
-    </div>
-    <% end %>
+    <%= render 'shared/flash_messages' %>
     <div class="row">
       <%= yield %>
     </div>

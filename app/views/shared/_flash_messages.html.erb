@@ -1,0 +1,7 @@
+<% flash.each do |name, msg| %>
+<div class="alert content-alert alert-<%= name == "notice" ? "success" : name %>">
+  <a class="close" data-dismiss="alert">×</a>
+  <%= msg %>
+</div>
+<% end %>
+  

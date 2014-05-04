@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def index
     @sections = Section.all.order(:name)
     @brands = Brand.all.order(:name)
+    @products_promo = Product.where('promotion' => true)
     if session[:sections_filter].nil?
       @products = Product.all
     else
@@ -17,7 +18,7 @@ class ProductsController < ApplicationController
   end
   
   def promotion
-    @products = Product.where('promotion' => true)
+    @products_promo = Product.where('promotion' => true)
   end
 
   # GET /products/1

@@ -11,11 +11,9 @@
       <% @products.each do |product| %>
       <tr>
         <td class='col-md-2 col-sm-3 col-xs-4'>
-          <% if main_image(product) %>
           <div class="thumbnail">
-            <%= link_to image_tag(main_image(product)), product_path(product) %>
-          </div>
-          <% end %>
+          <%= link_to image_tag(product.photo.url(:thumb)), product_path(product) %>
+        </div>
         </td>
         <td><strong><%= product.title %></strong><br>
           <strong>(<%= product.brand.name unless product.brand.nil? %>)</strong><br>
