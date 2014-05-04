@@ -22,18 +22,18 @@
           <%= simple_format(truncate(product.description, length: 180), {}, wrapper_tag: "span") %><br>
           <%= number_to_currency(product.price) %>
           <% if product.offer %>
-            <span class="offer">
-              <br>
-              <%= number_to_currency(product.offer_price) %>
-              - Offer price
-            </span>
+          <span class="offer">
+            <br>
+            <%= number_to_currency(product.offer_price) %>
+            - Offer price
+          </span>
           <% end %>
           <% if session[:user_id] %>
-            <br>
-            <div class="btn-group btn-to-right">
-              <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-default' %>
-              <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-            </div>
+          <br>
+          <div class="btn-group btn-to-right">
+            <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-default' %>
+            <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+          </div>
           <% end %>
         </td>
       </tr>
@@ -41,9 +41,8 @@
     </tbody>
   </table>
   <% if session[:user_id] %>
-  <span class="row_buttons2 well">
-    <%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>
-  </span>
+  <hr>
+  <%= link_to 'New Product', new_product_path, class: 'btn btn-sm btn-primary' %>
   <% end %>
 </div>
 <div class="col-sm-2">

@@ -5,16 +5,15 @@
       <% @sections.each do |section| %>
       <tr>
         <td><strong><%= section.name %></strong><br>
-            <div class="btn-group btn-to-right">
-              <%= link_to 'Edit', edit_section_path(section), class: 'btn btn-xs btn-default' %>
-              <%= link_to 'Delete', section_path(section), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-            </div>
+          <div class="btn-group btn-to-right">
+            <%= link_to 'Edit', edit_section_path(section), class: 'btn btn-xs btn-default' %>
+            <%= link_to 'Delete', section_path(section), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+          </div>
         </td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <span class="row_buttons">
-    <%= link_to 'New Section', new_section_path, class: 'btn btn-primary' %>
-  </span>
+  <hr>
+  <%= link_to 'New Section', new_section_path, class: 'btn btn-sm btn-primary' %>
 </div>

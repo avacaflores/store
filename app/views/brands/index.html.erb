@@ -12,17 +12,16 @@
           <% end %>
         </td>
         <td><strong><%= brand.name %></strong><br>
-            <div class="btn-group btn-to-right">
-              <%= link_to 'Edit', edit_brand_path(brand), class: 'btn btn-xs btn-default' %>
-              <%= link_to 'Delete', brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-            </div>
+          <div class="btn-group btn-to-right">
+            <%= link_to 'Edit', edit_brand_path(brand), class: 'btn btn-xs btn-default' %>
+            <%= link_to 'Delete', brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+          </div>
         </td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <span class="row_buttons">
-    <%= link_to 'New Brand', new_brand_path, class: 'btn btn-primary' %>
-  </span>
+  <hr>
+  <%= link_to 'New Brand', new_brand_path, class: 'btn btn-sm btn-primary' %>
 </div>
 

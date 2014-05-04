@@ -1,38 +1,43 @@
 <div class="col-md-6 col-md-offset-3">
-  <h3>Product Details</h3>
-  <dl class="dl-horizontal show-record">
-    <dt><strong>Product:</strong></dt>
-    <dd><%= @product.title %></dd>
-    <%= row_title 'Part number' %>
-    <%= row_content @product.part_number %>
-    <dt><strong>Brand:</strong></dt>
-    <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
-    <dt><strong>Description:</strong></dt>
-    <dd><%= simple_format(@product.description) %></dd>
-    <dt><strong>Price:</strong></dt>
-    <dd><%= number_to_currency(@product.price) %></dd>
-    <% if @product.offer %>
-    <dt><strong>Offer Price:</strong></dt>
-    <dd><%= number_to_currency(@product.offer_price) %></dd>
-    <% end %>
-    <% if session[:user_id] %>
-      <dt><strong>Min price:</strong></dt>
-      <dd><%= number_to_currency(@product.min_price) %></dd>
-      <dt><strong>Offer:</strong></dt>
-      <dd><%= @product.offer %></dd>
-      <dt><strong>Promotion:</strong></dt>
-      <dd><%= @product.promotion %></dd>
-    <% end %>
-    <dt><strong>Section:</strong></dt>
-    <dd><%= @product.section.name unless @product.section.nil? %></dd>
-    <dt><strong>Image:</strong></dt>
-    <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
-  </dl>
-  <span class="row_buttons">
-    <%= link_to 'Products List', products_path, class: 'btn btn-default' %>
-    <% if session[:user_id] %>
-      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-    <% end %>
-  </span>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Product Details</h3>
+    </div>
+    <div class="panel-body content-panel">
+      <dl class="dl-horizontal show-record">
+        <dt><strong>Product:</strong></dt>
+        <dd><%= @product.title %></dd>
+        <%= row_title 'Part number' %>
+        <%= row_content @product.part_number %>
+        <dt><strong>Brand:</strong></dt>
+        <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
+        <dt><strong>Description:</strong></dt>
+        <dd><%= simple_format(@product.description) %></dd>
+        <dt><strong>Price:</strong></dt>
+        <dd><%= number_to_currency(@product.price) %></dd>
+        <% if @product.offer %>
+        <dt><strong>Offer Price:</strong></dt>
+        <dd><%= number_to_currency(@product.offer_price) %></dd>
+        <% end %>
+        <% if session[:user_id] %>
+        <dt><strong>Min price:</strong></dt>
+        <dd><%= number_to_currency(@product.min_price) %></dd>
+        <dt><strong>Offer:</strong></dt>
+        <dd><%= @product.offer %></dd>
+        <dt><strong>Promotion:</strong></dt>
+        <dd><%= @product.promotion %></dd>
+        <% end %>
+        <dt><strong>Section:</strong></dt>
+        <dd><%= @product.section.name unless @product.section.nil? %></dd>
+        <dt><strong>Image:</strong></dt>
+        <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
+      </dl>
+      <hr>
+      <%= link_to 'Products List', products_path, class: 'btn btn-sm btn-default' %>
+      <% if session[:user_id] %>
+      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+      <% end %>
+    </div>
+  </div>
 </div>

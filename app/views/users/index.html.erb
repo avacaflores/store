@@ -6,7 +6,7 @@
       <tr>
         <td><strong><%= user.name %></strong><br>
           <div class="item_buttons">
-            <div class="btn-group">
+            <div class="btn-group  btn-to-right">
               <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-xs btn-default' %>
               <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
             </div>
@@ -16,7 +16,6 @@
       <% end %>
     </tbody>
   </table>
-  <span class="row_buttons">
-    <%= link_to 'New User', new_user_path, class: 'btn btn-primary' %>
-  </span>
+  <hr>
+  <%= link_to 'New User', new_user_path, class: 'btn btn-sm btn-primary' %>
 </div>

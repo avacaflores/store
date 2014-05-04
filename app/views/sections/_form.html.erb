@@ -1,16 +1,26 @@
-<%= simple_form_for @section, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><%= title %></h3>
+    </div>
+    <div class="panel-body content-panel">
+      
+      <%= simple_form_for @section, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
     
-<%= render 'shared/error_messages', object: f.object %>
+      <%= render 'shared/error_messages', object: f.object %>
     
-<%= f.input :name, error: false %>    
+      <%= f.input :name, error: false %>    
 
-<%= f.error :base %>
+      <%= f.error :base %>
 
-<span class="row_buttons">
-  <%= f.button :submit, class: 'btn btn-primary' %>
-  <%= link_to 'Cancel', sections_path, class: 'btn btn-default' %>
-</span>
-<% end %>
+      <hr>
+      
+      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Cancel', sections_path, class: 'btn btn-sm btn-default' %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 
 
