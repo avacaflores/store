@@ -57,9 +57,10 @@ class SectionsController < ApplicationController
   # DELETE /sections/1
   # DELETE /sections/1.json
   def destroy
+    linked_count = Product.where(section_id: @section.id).count
     @section.destroy
     respond_to do |format|
-      format.html { redirect_to sections_url }
+      format.html { redirect_to sections_url, flash: { warning: "#{linked_count} product(s) not linked to a section." }}
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
   
+  resources :contacts, only: [:index, :show, :new, :create, :destroy]
+
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create 
@@ -8,25 +11,22 @@ Store::Application.routes.draw do
 
   #get "admin/index"
   
-  
-
   root :to => "static_pages#home"
  
   get 'products/promotion' => 'products#promotion'
   resources :products
  
-  
+  get 'brands/:id/add_filter' => 'brands#add_filter', as: 'add_filter_brands'
+  get 'brands/:name/remove_filter' => 'brands#remove_filter', as: 'remove_filter_brands'
+  get 'brands/remove_all_filters' => 'brands#remove_all_filters', as: 'remove_all_filters_brands'
   resources :brands
-
-  resources :users
 
   get 'sections/:id/add_filter' => 'sections#add_filter', as: 'add_filter_sections'
   get 'sections/:name/remove_filter' => 'sections#remove_filter', as: 'remove_filter_sections'
   get 'sections/remove_all_filters' => 'sections#remove_all_filters', as: 'remove_all_filters_sections'
-
   resources :sections
 
-  resources :front_end
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

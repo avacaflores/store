@@ -1,9 +1,9 @@
 module ApplicationHelper
   
-  def main_image(product)
-    #i = product.images.first 
-    product.photo.url(:thumb) unless product.photo.blank?
-  end
+  # def main_image(product)
+  #   #i = product.images.first 
+  #   product.photo.url(:thumb) unless product.photo.blank?
+  # end
   
   
   def row_title(label)
@@ -18,7 +18,6 @@ module ApplicationHelper
   
   
   def click_section
-    
     render products_path
   end
   

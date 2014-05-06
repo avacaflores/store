@@ -1,0 +1,20 @@
+<div class="col-md-6 col-md-offset-3">
+  <h3>Contacts</h3>
+  <table class="table table-striped">
+    <tbody>
+      <% @contacts.each do |contact| %>
+      <tr>
+        <td>
+          <%= link_to contact.created_at, contact_path(contact) %><br>
+          <strong><%= contact.name %></strong> (<%= contact.email %></strong>)<br>
+          <%= simple_format(truncate(contact.message, length: 180), {}, wrapper_tag: "span") %>
+          <div class="btn-group btn-to-right">
+            <%= link_to 'Delete', contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

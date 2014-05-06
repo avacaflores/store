@@ -1,6 +1,6 @@
 <div>
   <div class="thumbnail center_label">
-    <%= image_tag(brand.photo.url(:thumb)) unless brand.photo.nil? %>
-    <%= brand.name %>
+    <%= link_to image_tag(brand.photo.url(:thumb)), add_filter_brands_path(brand) %>
+    <%= link_to brand.name, add_filter_brands_path(brand) %>
   </div>
 </div>

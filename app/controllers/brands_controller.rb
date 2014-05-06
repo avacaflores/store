@@ -1,5 +1,8 @@
 class BrandsController < ApplicationController
-  before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  
+  skip_before_action :authorize, only: [:add_filter, :remove_filter, :remove_all_filters]
+  
+  before_action :set_brand, only: [:show, :edit, :update, :destroy, :add_filter]
 
   # GET /brands
   # GET /brands.json
@@ -54,11 +57,30 @@ class BrandsController < ApplicationController
   # DELETE /brands/1
   # DELETE /brands/1.json
   def destroy
+    linked_count = Product.where(brand_id: @brand.id).count
     @brand.destroy
     respond_to do |format|
-      format.html { redirect_to brands_url }
+      format.html { redirect_to brands_url, flash: { warning: "#{linked_count} product(s) not linked to a brand." }}
       format.json { head :no_content }
     end
+  end
+  
+  def add_filter
+    session[:brands_filter] ||= []
+    session[:brands_filter] << @brand.name unless session[:brands_filter].include?(@brand.name)
+    redirect_to products_path 
+  end
+  
+  def remove_filter
+    @brand = Brand.find_by(name: params[:name])
+    session[:brands_filter].delete(@brand.name)
+    session[:brands_filter] = nil unless session[:brands_filter].count > 0
+    redirect_to products_path
+  end
+  
+  def remove_all_filters
+    session[:brands_filter] = nil
+    redirect_to products_path
   end
 
   private

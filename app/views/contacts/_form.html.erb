@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><%= title %></h3>
+    </div>
+    <div class="panel-body content-panel">
+      
+      <%= simple_form_for @contact, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+    
+      <%= render 'shared/error_messages', object: f.object %>
+    
+      <%= f.input :name %> 
+      <%= f.input :email %> 
+      <%= f.input :phone %>
+      <%= f.input :message, as: :text, input_html: { rows: 8 } %>    
+
+      <%= f.error :base %>
+
+      <hr>
+      
+      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Cancel', products_path, class: 'btn btn-sm btn-default' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+

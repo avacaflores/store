@@ -10,10 +10,19 @@ class ProductsController < ApplicationController
     @sections = Section.all.order(:name)
     @brands = Brand.all.order(:name)
     @products_promo = Product.where('promotion' => true)
-    if session[:sections_filter].nil?
+    
+    if session[:sections_filter].nil? and session[:brands_filter].nil?
       @products = Product.all
-    else
-      @products = Product.joins(:section).where('sections.name' => session[:sections_filter])
+    else 
+      if session[:sections_filter].nil?
+        @products = Product.joins(:brand).where( 'brands.name = ?', session[:brands_filter])
+      else
+        if session[:brands_filter].nil?
+          @products = Product.joins(:section).where( 'sections.name = ?', session[:sections_filter])
+        else
+          @products = Product.joins(:section,:brand).where( 'sections.name = ? AND brands.name = ?', session[:sections_filter],session[:brands_filter])
+        end
+      end
     end
   end
   
@@ -29,7 +38,6 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    # 5.times { @product.images.build }
   end
 
   # GET /products/1/edit
@@ -77,14 +85,14 @@ class ProductsController < ApplicationController
   end  
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id,
-      :images_attributes => [:id,:url,:use,:image])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def product_params
+    params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id,
+    :images_attributes => [:id,:url,:use,:image])
+  end
 end

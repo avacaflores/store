@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504025328) do
+ActiveRecord::Schema.define(version: 20140506013804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: true do |t|
     t.string   "name"
-    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -27,26 +26,13 @@ ActiveRecord::Schema.define(version: 20140504025328) do
     t.datetime "photo_updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "contacts", force: true do |t|
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories_products", force: true do |t|
-    t.integer "category_id"
-    t.integer "product_id"
-  end
-
-  create_table "images", force: true do |t|
-    t.string   "use"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "product_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "email"
+    t.string   "phone"
   end
 
   create_table "products", force: true do |t|
@@ -59,26 +45,17 @@ ActiveRecord::Schema.define(version: 20140504025328) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "brand_id"
     t.string   "part_number"
     t.decimal  "min_price"
-    t.integer  "section_id"
     t.decimal  "offer_price"
     t.boolean  "offer",                                      default: false
     t.boolean  "promotion",                                  default: false
-  end
-
-  create_table "profiles", force: true do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "company"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "section_id"
   end
 
   create_table "sections", force: true do |t|
     t.string   "name"
-    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

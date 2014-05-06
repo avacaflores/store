@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 // General
 
 body {
@@ -64,161 +65,126 @@ body {
 }
 
 
-
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
+// Typography
 
 h1 {
   font-size: 2.2em;
-  //letter-spacing: -2px;
-  //margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
 
-//p {
-  //  font-size: 1.1em;
-  //  line-height: 1.7em;
-  //}
 
+// Footer
 
-  // Footer
-
-  .footer {
-    background: white;
-    margin-top: 45px;
-    margin-bottom: 45px;
-    padding-top: 5px;
-    border-top: 1px solid $gray-light;
-    color: $gray-light;
-    a {
-      color: $gray;
-      &:hover {
-        color: $gray-darker;
-      }
+.footer {
+  background: white;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
     }
-    small {
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
       float: left;
-    }
-    ul {
-      float: right;
-      list-style: none;
-      li {
-        float: left;
-        margin-left: 10px;
-      }
+      margin-left: 10px;
     }
   }
+}
 
 
-  // Forms
+// Forms
 
-  input, textarea, select {
-    width: 100%;
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    margin-bottom: 5px;  
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin-bottom: 5px;  
 
-    &.filestyle {
-      border: 0px;
-    }
-    
-    &.price-field {
-      width: 50%;
-    }
-    
-    &.boolean-field {
-      width: 20%;
-    }
-
-    &.btn {
-      height: auto;
-      width: auto;
-    }
-
+  &.filestyle {
+    border: 0px;
   }
+    
+  &.price-field {
+    width: 50%;
+  }
+    
+  &.boolean-field {
+    width: 20%;
+  }
+
+  &.btn {
+    height: auto;
+    width: auto;
+  }
+
+}
   
-  //  #error_explanation {
-    //    color: #f00;
-    //    ul {
-      //      list-style: none;
-      //      margin: 0 0 18px 0;
-      //    }
-      //  }
 
-      //  .field_with_errors {
-        //    @extend .control-group;
-        //    @extend .error;
-        //  }
-
+// offer price
   
-        // offer price
-  
-        .offer {
-          color: red;
-        }
-
-        // buttons bar
-
-        .row_buttons {
-          display: block;
-          margin: 10px 0 0 0;
-          padding: 10px;
-          background-color: lightgray;
-          border: 1px solid gray;
-          border-radius: 5px;
-        }
-
-        .btn-to-right {
-          float: right;
-        }
-
-        // table for show
-
-        dl dt {
-          padding: 5px;
-        }
-
-        dl dd {
-          padding: 5px;
-          margin: 5px;
-          background-color: #F3F3F3;
-          border: 1px solid #F3F3F3;
-          border-radius: 5px;
-        }
-
-        #photo_row {
-          background-color: white;
-          border: 1px solid white;
-        }
+.offer {
+  color: red;
+}
 
 
-        // center label
+// buttons gr
 
-        .center_label {
-          text-align: center;
-        }
+.row_buttons {
+  display: block;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
 
-        //  // filters
-        //
-        //  .filters {
-          //    margin: 10px;
-          //  }
+.btn-to-right {
+  float: right;
+}
 
 
+// table for show
+
+dl dt {
+  padding: 5px;
+}
+
+dl dd {
+  padding: 5px;
+  margin: 5px;
+  background-color: #F3F3F3;
+  border: 1px solid #F3F3F3;
+  border-radius: 5px;
+}
+
+#photo_row {
+  background-color: white;
+  border: 1px solid white;
+}
 
 
+// center label
 
+.center_label {
+  text-align: center;
+}
 
