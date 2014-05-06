@@ -11,13 +11,15 @@
         <%= row_content @product.part_number %>
         <dt><strong>Brand:</strong></dt>
         <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
+        <dt></dt>
+        <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
         <dt><strong>Description:</strong></dt>
         <dd><%= simple_format(@product.description) %></dd>
         <dt><strong>Price:</strong></dt>
         <dd><%= number_to_currency(@product.price) %></dd>
         <% if @product.offer %>
-        <dt><strong>Offer Price:</strong></dt>
-        <dd><%= number_to_currency(@product.offer_price) %></dd>
+          <dt><strong>Offer Price:</strong></dt>
+          <dd class="offer"><%= number_to_currency(@product.offer_price) %></dd>
         <% end %>
         <% if session[:user_id] %>
         <dt><strong>Min price:</strong></dt>
@@ -29,8 +31,6 @@
         <% end %>
         <dt><strong>Section:</strong></dt>
         <dd><%= @product.section.name unless @product.section.nil? %></dd>
-        <dt><strong>Image:</strong></dt>
-        <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
       </dl>
       <hr>
       <%= link_to 'Products List', products_path, class: 'btn btn-sm btn-default' %>

@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all.order('created_at DESC')
+    @contacts = Contact.paginate(page: params[:page]).order('created_at DESC')
   end
 
   # GET /contacts/1
