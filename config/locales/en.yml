@@ -20,4 +20,107 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  
+  action:
+    edit: 'Edit'
+    delete: 'Delete'
+    confirm: 'Are you sure?'
+    cancel: 'Cancel'
+  
+  
+  layouts:
+    header:
+      featured_products: 'Featured Products'
+      all_products: 'All Products'
+    footer:
+      about: 'About'
+      contact: 'Contact'
+      
+  
+  
+  products:
+    new:
+      title: 'New Product'
+    edit:
+      title: 'Edit Product'
+    show:
+      title: 'Product Details'
+    promotion:
+      title: 'Featured Products'
+    label:
+      product: 'Product'
+      part_number: 'Part Number'
+      brand: 'Brand'
+      description: 'Description'
+      price: 'Price'
+      offer_price: 'Sale Price'
+      min_price: 'Minimun Price'
+      offer: 'In Sale?'
+      promotion: 'Featured Product?'
+      section: 'Section'
+      image: 'Image'
+    action:
+      list: 'Products List'
+      new: 'New Product'
+      create: 'Create Product'
+  
+  sections:
+    title: 'Sections'
+    
+  brands:
+    title: 'Brands'
+    new:
+      title: 'New Brand'
+    edit:
+      title: 'Edit Brand'
+    show:
+      title: 'Brand Details'
+    label:
+      brand: 'Brand'
+      image: 'Image'
+    action:
+      list: 'Brands List'
+      new: 'New Brand'
+      create: 'Create Brand'
+      
+  contacts:
+    title: 'Contacts'
+    new:
+      title: 'New Contact'
+    edit:
+      title: 'Edit Contact'
+    show:
+      title: 'Contact Details'
+    label:
+      name: 'Name'
+      email: 'eMail'
+      phone: 'Phone'
+      message: 'Message'
+    action:
+      new: 'Contact'
+      create: 'Send Message'
+
+  users:
+    title: 'Users'
+    new:
+      title: 'New User'
+    edit:
+      title: 'Edit User'
+    show:
+      title: 'User Details'
+    label:
+      name: 'Username'
+      password: 'Password'
+      password_confirmation: 'Password Confirmation'
+    action:
+      list: 'Brands List'
+      new: 'New Brand'
+      create: 'Create Brand'
+
+
+
+  
+
+      
+      
+  

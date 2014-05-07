@@ -1,21 +1,21 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Contact Details</h3>
+      <h3><%= t('.title') %></h3>
     </div>
     <div class="panel-body content-panel">
       <dl class="dl-horizontal">
-        <dt><strong>Name:</strong></dt>
-        <dd><%= @contact.name %></dd>
-        <dt><strong>eMail:</strong></dt>
-        <dd><%= @contact.email %></dd>
-        <dt><strong>Phone:</strong></dt>
-        <dd><%= @contact.phone %></dd>
-        <dt><strong>Message:</strong></dt>
-        <dd><%= simple_format(@contact.message, {}, wrapper_tag: "span") %></dd>
+        <%= row_title t('contacts.label.name') %>
+        <%= row_content @contact.name %>
+        <%= row_title t('contacts.label.email') %>
+        <%= row_content @contact.email %>
+        <%= row_title t('contacts.label.phone') %>
+        <%= row_content @contact.phone %>
+        <%= row_title t('contacts.label.message') %>
+        <%= row_content simple_format(@contact.message, {}, wrapper_tag: "span") %>
       </dl>
       <hr>
-      <%= link_to 'Products List', products_path, class: 'btn btn-sm btn-default' %>
+      <%= link_to t('products.action.list'), products_path, class: 'btn btn-sm btn-default' %>
     </div>
   </div>
 </div>

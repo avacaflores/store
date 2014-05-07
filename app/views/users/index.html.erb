@@ -7,8 +7,8 @@
         <td><strong><%= user.name %></strong><br>
           <div class="item_buttons">
             <div class="btn-group  btn-to-right">
-              <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-xs btn-default' %>
-              <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+              <%= link_to t('action.edit'), edit_user_path(user), class: 'btn btn-xs btn-default' %>
+              <%= link_to t('action.delete'), user_path(user), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-xs btn-danger' %>
             </div>
           </div>
         </td>

@@ -9,17 +9,17 @@
     
       <%= render 'shared/error_messages', object: f.object %>
     
-      <%= f.input :name %> 
-      <%= f.input :email %> 
-      <%= f.input :phone %>
-      <%= f.input :message, as: :text, input_html: { rows: 8 } %>    
+      <%= f.input :name, label: t('contacts.label.name') %> 
+      <%= f.input :email, label: t('contacts.label.email'), error: false %> 
+      <%= f.input :phone, label: t('contacts.label.phone') %>
+      <%= f.input :message, label: t('contacts.label.message'), as: :text, input_html: { rows: 8 } %>    
 
       <%= f.error :base %>
 
       <hr>
       
-      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Cancel', products_path, class: 'btn btn-sm btn-default' %>
+      <%= f.button :submit, label: t('contacts.action.create'), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.cancel'), products_path, class: 'btn btn-sm btn-default' %>
     </div>
     <% end %>
   </div>

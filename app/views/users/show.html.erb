@@ -1,17 +1,17 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>User Details</h3>
+      <h3><%= t('.title')%></h3>
     </div>
     <div class="panel-body content-panel">
       <dl class="dl-horizontal">
-        <dt><strong>Name:</strong></dt>
-        <dd><%= @user.name %></dd>
+        <%= row_title t('users.label.name') %>
+        <%= row_content @user.name %>
       </dl>
       <hr>
-      <%= link_to 'Users List', users_path, class: 'btn btn-sm btn-default' %>
-      <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+      <%= link_to t('users.action.list'), users_path, class: 'btn btn-sm btn-default' %>
+      <%= link_to t('action.edit'), edit_user_path(@user), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.delete'), user_path(@user), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-sm btn-danger' %>
     </div>
   </div>
 </div>

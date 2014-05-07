@@ -9,8 +9,8 @@
     
       <%= render 'shared/error_messages', object: f.object %>
     
-      <%= f.input :name, error: false %>    
-      <%= f.label "Image" %>
+      <%= f.input :name, label: t('brands.label.brand'), error: false %>    
+      <%= f.label t('brands.label.image') %>
       <%= f.file_field :photo, class: 'filestyle' %>
       <%= image_tag @brand.photo.url(:thumb) if @brand.photo_file_name %>
 
@@ -18,8 +18,8 @@
 
       <hr>
       
-      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Cancel', brands_path, class: 'btn btn-sm btn-default' %>
+      <%= f.button :submit, label: t('brands.action.create'), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.cancel'), brands_path, class: 'btn btn-sm btn-default' %>
     </div>
     <% end %>
   </div>

@@ -1,19 +1,18 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Brand Details</h3>
+      <h3><%= t('.title') %></h3>
     </div>
     <div class="panel-body content-panel">
       <dl class="dl-horizontal">
-        <dt><strong>Brand:</strong></dt>
-        <dd><%= @brand.name %></dd>
-        <dt><strong>Image:</strong></dt>
-        <dd id="photo_row"><div class="thumbnail"><%= image_tag(@brand.photo.url(:medium)) unless @brand.photo.nil? %></div></dd>
+        <%= row_title t('brands.label.brand') %>
+        <%= row_content @brand.name %>
+        <dd class="image-row"><%= image_tag(@brand.photo.url(:medium)) %></dd>
       </dl>
       <hr>
-      <%= link_to 'Brands List', brands_path, class: 'btn btn-sm btn-default' %>
-      <%= link_to 'Edit', edit_brand_path(@brand), class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Delete', brand_path(@brand), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+      <%= link_to t('brands.action.list'), brands_path, class: 'btn btn-sm btn-default' %>
+      <%= link_to t('action.edit'), edit_brand_path(@brand), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.delete'), brand_path(@brand), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-sm btn-danger' %>
     </div>
   </div>
 </div>

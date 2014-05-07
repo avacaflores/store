@@ -1,16 +1,16 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Please Log In</h3>
+      <h3>Log In</h3>
     </div>
     <div class="panel-body content-panel">
       <%= form_tag do %>
       <div>
-        <%= label_tag :name, 'Name:' %>
+        <%= label_tag :name, t('users.label.name') %>
         <%= text_field_tag :name, params[:name] %>
       </div>
       <div>
-        <%= label_tag :password, 'Password:' %>
+        <%= label_tag :password, t('users.label.password') %>
         <%= password_field_tag :password, params[:password] %>
       </div> 
       <hr>

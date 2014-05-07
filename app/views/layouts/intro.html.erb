@@ -28,8 +28,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Featured Products", products_promotion_path %></li>
-          <li><%= link_to "All Products", products_path %></li>
+          <li><%= link_to t('.featured_products'), products_promotion_path %></li>
+          <li><%= link_to t('.all_products'), products_path %></li>
           <% if session[:user_id] %>
             <li><%= link_to "LogOut", logout_path %></li>
           <% else %>

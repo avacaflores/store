@@ -29,8 +29,8 @@
           <% if session[:user_id] %>
           <br>
           <div class="btn-group btn-to-right">
-            <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-xs btn-default' %>
-            <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+            <%= link_to t('action.edit'), edit_product_path(product), class: 'btn btn-xs btn-default' %>
+            <%= link_to t('action.delete'), product_path(product), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-xs btn-danger' %>
           </div>
           <% end %>
         </td>
@@ -40,13 +40,13 @@
   </table>
   <% if session[:user_id] %>
   <hr>
-  <%= link_to 'New Product', new_product_path, class: 'btn btn-sm btn-primary' %>
+  <%= link_to t('products.action.new'), new_product_path, class: 'btn btn-sm btn-primary' %>
   <% end %>
 </div>
 <div class="col-sm-2">
-  <h2>Sections</h2>
+  <h2><%= t('sections.title') %></h2>
   <%= render @sections %>
-  <h2>Brands</h2>
+  <h2><%= t('brands.title') %></h2>
   <%= render @brands %>
 </div>
 

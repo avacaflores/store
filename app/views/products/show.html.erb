@@ -1,42 +1,41 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Product Details</h3>
+      <h3><%= t('.title') %></h3>
     </div>
     <div class="panel-body content-panel">
       <dl class="dl-horizontal show-record">
-        <dt><strong>Product:</strong></dt>
-        <dd><%= @product.title %></dd>
-        <%= row_title 'Part number' %>
+        <%= row_title t('products.label.product') %>
+        <%= row_content @product.title %>
+        <%= row_title t('products.label.part_number') %>
         <%= row_content @product.part_number %>
-        <dt><strong>Brand:</strong></dt>
-        <dd><%= @product.brand.name unless @product.brand.nil? %></dd>
-        <dt></dt>
-        <dd id="photo_row"><div class="thumbnail"><%= image_tag(@product.photo.url(:medium)) unless @product.photo.nil? %></div></dd>
-        <dt><strong>Description:</strong></dt>
-        <dd><%= simple_format(@product.description) %></dd>
-        <dt><strong>Price:</strong></dt>
-        <dd><%= number_to_currency(@product.price) %></dd>
+        <%= row_title t('products.label.brand') %>
+        <%= row_content @product.brand.name unless @product.brand.nil? %>
+        <dd class="image-row"><%= image_tag(@product.photo.url(:medium)) %></dd>
+        <%= row_title t('products.label.description') %>
+        <%= row_content simple_format(@product.description) %>
+        <%= row_title t('products.label.price') %>
+        <%= row_content number_to_currency(@product.price) %>
         <% if @product.offer %>
-          <dt><strong>Offer Price:</strong></dt>
-          <dd class="offer"><%= number_to_currency(@product.offer_price) %></dd>
+          <%= row_title t('products.label.offer') %>
+          <%= row_content content_tag :div, number_to_currency(@product.offer_price), class: 'offer' %>
         <% end %>
         <% if session[:user_id] %>
-        <dt><strong>Min price:</strong></dt>
-        <dd><%= number_to_currency(@product.min_price) %></dd>
-        <dt><strong>Offer:</strong></dt>
-        <dd><%= @product.offer %></dd>
-        <dt><strong>Promotion:</strong></dt>
-        <dd><%= @product.promotion %></dd>
-        <% end %>
-        <dt><strong>Section:</strong></dt>
-        <dd><%= @product.section.name unless @product.section.nil? %></dd>
+          <%= row_title t('products.label.min_price') %>
+          <%= row_content number_to_currency(@product.min_price) %>
+          <%= row_title t('products.label.offer') %>
+          <%= row_content @product.offer %>
+          <%= row_title t('products.label.promotion') %>
+          <%= row_content @product.promotion %>
+          <% end %>
+        <%= row_title t('products.label.section') %>
+        <%= row_content @product.section.name unless @product.section.nil? %>
       </dl>
       <hr>
-      <%= link_to 'Products List', products_path, class: 'btn btn-sm btn-default' %>
+      <%= link_to t('products.action.list'), products_path, class: 'btn btn-sm btn-default' %>
       <% if session[:user_id] %>
-      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+      <%= link_to t('action.edit'), edit_product_path(@product), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.delete'), product_path(@product), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-sm btn-danger' %>
       <% end %>
     </div>
   </div>

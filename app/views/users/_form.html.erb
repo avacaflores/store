@@ -9,14 +9,14 @@
     
       <%= render 'shared/error_messages', object: f.object %>
     
-      <%= f.input :name, error: false %>    
-      <%= f.input :password, error: false %>
-      <%= f.input :password_confirmation, error: false %>
+      <%= f.input :name, label: t('users.label.name'), error: false %>    
+      <%= f.input :password, label: t('users.label.password'), error: false %>
+      <%= f.input :password_confirmation, label: t('users.label.password_confirmation'), error: false %>
 
       <hr>
       
-      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Cancel', users_path, class: 'btn btn-sm btn-default' %>
+      <%= f.button :submit, label: t('users.action.create'), class: 'btn btn-sm btn-primary' %>
+      <%= link_to t('action.cancel'), users_path, class: 'btn btn-sm btn-default' %>
     </div>
     <% end %>
   </div>
