@@ -5,7 +5,7 @@
     </div>
     <div class="panel-body content-panel">
       <dl class="dl-horizontal">
-        <%= row_title t('brands.label.brand') %>
+        <%= row_title Brand.human_attribute_name(:name) %>
         <%= row_content @brand.name %>
         <dd class="image-row"><%= image_tag(@brand.photo.url(:medium)) %></dd>
       </dl>

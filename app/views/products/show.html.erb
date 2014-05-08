@@ -17,7 +17,7 @@
         <%= row_title t('products.label.price') %>
         <%= row_content number_to_currency(@product.price) %>
         <% if @product.offer %>
-          <%= row_title t('products.label.offer') %>
+          <%= row_title t('products.label.offer_price') %>
           <%= row_content content_tag :div, number_to_currency(@product.offer_price), class: 'offer' %>
         <% end %>
         <% if session[:user_id] %>
@@ -33,6 +33,7 @@
       </dl>
       <hr>
       <%= link_to t('products.action.list'), products_path, class: 'btn btn-sm btn-default' %>
+      <%= link_to t('contacts.action.info'), new_contact_path(product: "#{@product.brand.name} - #{@product.title}: "), class: 'btn btn-sm btn-success' %>
       <% if session[:user_id] %>
       <%= link_to t('action.edit'), edit_product_path(@product), class: 'btn btn-sm btn-primary' %>
       <%= link_to t('action.delete'), product_path(@product), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-sm btn-danger' %>

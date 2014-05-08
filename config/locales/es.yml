@@ -1,6 +1,9 @@
 es:
 
   activerecord:
+    attributes:
+      brand:
+        name: "Marca"
     errors:
       messages:
         inclusion: "no est&aacute; incluido en la lista" 
@@ -24,6 +27,8 @@ es:
         user:
           new: 'Nuevo Usuario'
           update: 'Actualizar Usuario'
+        contact:
+          create: 'Enviar Mensaje'
   
   action:
     edit: 'Editar'
@@ -88,7 +93,6 @@ es:
     show:
       title: 'Detalles de la Marca'
     label:
-      brand: 'Marca'
       image: 'Imagen'
     action:
       list: 'Lista de Marcas'
@@ -98,11 +102,9 @@ es:
   contacts:
     title: 'Contactos'
     new:
-      title: 'Nueva Contacto'
-    edit:
-      title: 'Editar Contacto'
+      title: 'Contáctenos'
     show:
-      title: 'Detalles del Contacto'
+      title: 'Mensaje'
     label:
       name: 'Nombre'
       email: 'eMail'
@@ -110,6 +112,7 @@ es:
       message: 'Mensaje'
     action:
       create: 'Enviar Mensaje'
+      info: 'Solicitar Información'
 
   users:
     title: 'Usuarios'

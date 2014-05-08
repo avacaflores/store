@@ -18,6 +18,10 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @contact.name = cookies[:client_name] unless cookies[:client_name].nil?
+    @contact.email = cookies[:client_email] unless cookies[:client_email].nil?
+    @contact.phone = cookies[:client_phone] unless cookies[:client_phone].nil?
+    @contact.message = params[:product]
   end
 
   # POST /contacts
@@ -27,6 +31,9 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        cookies[:client_name] = @contact.name
+        cookies[:client_email] = @contact.email
+        cookies[:client_phone] = @contact.phone
         format.html { redirect_to @contact, notice: 'Message was successfully sent.' }
         format.json { render action: 'show', status: :created, location: @contact }
       else
