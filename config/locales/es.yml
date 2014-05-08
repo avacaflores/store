@@ -1,0 +1,130 @@
+es:
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "no est&aacute; incluido en la lista" 
+        blank: "no puede quedar en blanco"
+      errors:
+        template:
+          body: "Hay problemas con los siguientes campos:" 
+          header:
+            one: "1 error ha impedido que este %{model} se guarde"
+            other: "%{count} errores han impedido que este %{model} se guarde"
+  
+  
+  helpers:
+      submit:
+        product:
+          new: 'Nuevo Producto'
+          update: 'Actualizar Producto'
+        brand:
+          new: 'Nueva Marca'
+          update: 'Actualizar Marca'
+        user:
+          new: 'Nuevo Usuario'
+          update: 'Actualizar Usuario'
+  
+  action:
+    edit: 'Editar'
+    delete: 'Eliminar'
+    confirm: 'Esta seguro?'
+    cancel: 'Cancelar'
+  
+  general:
+    request_login: 'Por favor introduzca su log in.'
+
+  
+  
+  layouts:
+    header:
+      
+    footer:
+      about: 'Acerca de'
+      contact: 'Contacto'
+      
+  
+  
+  products:
+    title: 'Todos los Productos'
+    new:
+      title: 'Nuevo Producto'
+    edit:
+      title: 'Editar Producto'
+    show:
+      title: 'Detalles del Producto'
+    promotion:
+      title: 'Productos Destacados'
+    label:
+      product: 'Producto'
+      part_number: 'Número de Parte'
+      brand: 'Marca'
+      description: 'Descripción'
+      price: 'Precio'
+      offer_price: 'Precio de Oferta'
+      min_price: 'Precio Mínimo'
+      offer: 'En Oferta?'
+      promotion: 'Producto Destacado?'
+      section: 'Sección'
+      image: 'Imagen'
+    action:
+      list: 'Lista de Productos'
+      new: 'Nuevo Producto'
+
+  
+  sections:
+    title: 'Secciones'
+    
+  brands:
+    title: 'Marcas'
+    new:
+      title: 'Nueva Marca'
+    create:
+      message: 'Marca fue creada satisfactoriamente.'
+    edit:
+      title: 'Editar Marca'
+    update:
+      message: 'Marca fue actualizada satisfactoriamente.'
+    show:
+      title: 'Detalles de la Marca'
+    label:
+      brand: 'Marca'
+      image: 'Imagen'
+    action:
+      list: 'Lista de Marcas'
+      new: 'Nueva Marca'
+    
+      
+  contacts:
+    title: 'Contactos'
+    new:
+      title: 'Nueva Contacto'
+    edit:
+      title: 'Editar Contacto'
+    show:
+      title: 'Detalles del Contacto'
+    label:
+      name: 'Nombre'
+      email: 'eMail'
+      phone: 'Teléfono'
+      message: 'Mensaje'
+    action:
+      create: 'Enviar Mensaje'
+
+  users:
+    title: 'Usuarios'
+    new:
+      title: 'Nuevo Usuario'
+    edit:
+      title: 'Editar Usuario'
+    update:
+      message: "%{user} fue actualizado"
+    show:
+      title: 'Detalles del Usuario'
+    label:
+      name: 'Usuario'
+      password: 'Contraseña'
+      password_confirmation: 'Confirmar Contraseña'
+    action:
+      list: 'Lista de Usuarios'
+      new: 'Nuevo Usuario'

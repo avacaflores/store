@@ -21,17 +21,20 @@
 
 en:
   
+
+  
   action:
     edit: 'Edit'
     delete: 'Delete'
     confirm: 'Are you sure?'
     cancel: 'Cancel'
   
+  general:
+    request_login: 'Please log in.'
   
   layouts:
     header:
-      featured_products: 'Featured Products'
-      all_products: 'All Products'
+      
     footer:
       about: 'About'
       contact: 'Contact'
@@ -39,6 +42,7 @@ en:
   
   
   products:
+    title: 'All Products'
     new:
       title: 'New Product'
     edit:
@@ -71,8 +75,12 @@ en:
     title: 'Brands'
     new:
       title: 'New Brand'
+    create:
+      message: 'Brand was successfully created.'
     edit:
       title: 'Edit Brand'
+    update:
+      message: 'Brand was successfully updated.'
     show:
       title: 'Brand Details'
     label:
@@ -82,6 +90,7 @@ en:
       list: 'Brands List'
       new: 'New Brand'
       create: 'Create Brand'
+    
       
   contacts:
     title: 'Contacts'
@@ -113,9 +122,9 @@ en:
       password: 'Password'
       password_confirmation: 'Password Confirmation'
     action:
-      list: 'Brands List'
-      new: 'New Brand'
-      create: 'Create Brand'
+      list: 'Users List'
+      new: 'New User'
+      create: 'Create User'
 
 
 

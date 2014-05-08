@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   
   def authorize
     unless User.find_by(id: session[:user_id])
-      redirect_to login_url, flash: { warning: "Please log in" } 
+      redirect_to login_url, flash: { warning: t('general.request_login') } 
     end
   end
   
