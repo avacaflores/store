@@ -38,6 +38,9 @@ es:
   
   general:
     request_login: 'Por favor introduzca su log in.'
+    address: 'Dirección:'
+    phone: 'Teléfono:'
+    email: 'eMail:'
 
   
   
@@ -45,7 +48,7 @@ es:
     header:
       
     footer:
-      about: 'Acerca de'
+      language: 'Idioma:'
       contact: 'Contacto'
       
   

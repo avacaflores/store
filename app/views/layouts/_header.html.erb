@@ -8,13 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Store", root_path, class: 'navbar-brand' %>
+      <strong><%= link_to CONFIG[:store_name], root_path, class: 'navbar-brand' %></strong>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t('products.promotion.title'), products_promotion_path %></li>
         <li><%= link_to t('products.title'), products_path %></li>
+        <li><%= link_to t('.contact'), new_contact_path %></li>
         <% if session[:user_id] %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>

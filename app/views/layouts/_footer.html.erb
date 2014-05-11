@@ -1,11 +1,20 @@
-<footer class="footer"> 
-  <small>
-    Store by <a href="http://www.khawax.com/">KHAWAX</a>
+<footer class="footer">
+  <small> 
+    <nav>
+      <ul>
+        <li class="left">
+          <a href="http://avacaflores.github.io/">Alfonso Vacaflores</a> - <a href="http://www.khawax.com/">KHAWAX</a> &copy<%= Time.now.year %> 
+        </li>     
+        <!-- <li class="right">
+          <%= t('.language') %>
+          <%= link_to_unless_current "Español", locale: "es" %> |
+          <%= link_to_unless_current "English", locale: "en" %>
+        </li> -->
+        <li class="right">
+          <%= link_to_unless_current "Español", locale: "es" %> |
+          <%= link_to_unless_current "English", locale: "en" %>
+        </li>
+      </ul> 
+    </nav>
   </small>
-  <nav>
-    <ul>
-      <li><%= link_to t('.about'), '#' %></li>
-      <li><%= link_to t('.contact'), new_contact_path %></li>
-    </ul> 
-  </nav>
 </footer>

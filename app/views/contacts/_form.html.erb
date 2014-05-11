@@ -1,27 +1,41 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><%= title %></h3>
-    </div>
-    <div class="panel-body content-panel">
+      <div class="center-label">
+        <h4><%= CONFIG[:store_name] %></h4>
+        <small>
+          <div><%= t('general.address') %>
+            <%= CONFIG[:store_address] %>
+          </div>
+          <div><%= t('general.phone') %>
+            <%= CONFIG[:store_phone] %>
+          </div>
+          <div><%= t('general.email') %>
+            <%=  CONFIG[:store_email] %>
+          </div>
+        </small>
+          </div>
+          <h3><%= title %></h3>
+        </div>
+        <div class="panel-body content-panel">
       
-      <%= simple_form_for @contact, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+          <%= simple_form_for @contact, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
     
-      <%= render 'shared/error_messages', object: f.object %>
+          <%= render 'shared/error_messages', object: f.object %>
     
-      <%= f.input :name, label: t('contacts.label.name') %> 
-      <%= f.input :email, label: t('contacts.label.email'), error: false %> 
-      <%= f.input :phone, label: t('contacts.label.phone') %>
-      <%= f.input :message, label: t('contacts.label.message'), as: :text, input_html: { rows: 8 } %>    
+          <%= f.input :name, label: t('contacts.label.name') %> 
+          <%= f.input :email, label: t('contacts.label.email'), error: false %> 
+          <%= f.input :phone, label: t('contacts.label.phone') %>
+          <%= f.input :message, label: t('contacts.label.message'), as: :text, input_html: { rows: 8 } %>    
 
-      <%= f.error :base %>
+          <%= f.error :base %>
 
-      <hr>
+          <hr>
       
-      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
-      <%= link_to t('action.cancel'), products_path, class: 'btn btn-sm btn-default' %>
+          <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
+          <%= link_to t('action.cancel'), products_path, class: 'btn btn-sm btn-default' %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
-</div>
 

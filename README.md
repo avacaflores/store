@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Store##
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
+Is a Rails application that provides a store front for any kind of business
 
 * Configuration
 
-* Database creation
+Copy and enter the information for the following configuration files 
 
-* Database initialization
+```
+cp /config/database.yml.template /config/database.yml
+cp /config/config.yml.template /config/config.yml
+cp /config/secret.yml.template /config/secret.yml
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
