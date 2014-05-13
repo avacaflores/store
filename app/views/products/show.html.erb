@@ -24,16 +24,28 @@
           <%= row_title t('products.label.min_price') %>
           <%= row_content number_to_currency(@product.min_price) %>
           <%= row_title t('products.label.offer') %>
-          <%= row_content @product.offer %>
+          <% if @product.offer %>
+            <%= row_content t('booleans.true_value') %>
+          <% else %>
+            <%= row_content t('booleans.false_value') %>
+          <% end %>
           <%= row_title t('products.label.promotion') %>
-          <%= row_content @product.promotion %>
+            <% if @product.promotion %>
+              <%= row_content t('booleans.true_value') %>
+            <% else %>
+              <%= row_content t('booleans.false_value') %>
+            <% end %>
           <% end %>
         <%= row_title t('products.label.section') %>
         <%= row_content @product.section.name unless @product.section.nil? %>
       </dl>
       <hr>
       <%= link_to t('products.action.list'), products_path, class: 'btn btn-sm btn-default' %>
-      <%= link_to t('contacts.action.info'), new_contact_path(product: "#{@product.brand.name} - #{@product.title}: "), class: 'btn btn-sm btn-success' %>
+      <% if @product.brand.nil? %>
+      <%= link_to t('contacts.action.info'), new_contact_path(product: "#{@product.title}: "), class: 'btn btn-sm btn-success' %>
+      <% else %>
+            <%= link_to t('contacts.action.info'), new_contact_path(product: "#{@product.brand.name} - #{@product.title}: "), class: 'btn btn-sm btn-success' %>
+      <% end %>
       <% if session[:user_id] %>
       <%= link_to t('action.edit'), edit_product_path(@product), class: 'btn btn-sm btn-primary' %>
       <%= link_to t('action.delete'), product_path(@product), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-sm btn-danger' %>

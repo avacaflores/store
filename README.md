@@ -1,16 +1,24 @@
-== README
-
 ##Store##
 
 Is a Rails application that provides a store front for any kind of business
 
-* Configuration
+* Database configuration
 
-Copy and enter the information for the following configuration files 
+Copy and enter the information for the database: 
 
 ```
 cp /config/database.yml.template /config/database.yml
-cp /config/config.yml.template /config/config.yml
-cp /config/secret.yml.template /config/secret.yml
 ```
+
+* Secret keys
+
+if you are going to deploy to Heroku, create the enviromental variable:
+
+```
+heroku config:set SECRET_KEY_BASE='a5d162.....uytuyt65fgh'
+```
+
+* Store information
+
+Update the information in the file `/config/config.yml`
 

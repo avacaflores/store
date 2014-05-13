@@ -29,6 +29,8 @@ body {
     
     .content-filter {
       margin: 0 0 10px 0;
+      font-size: 0.9em;
+      color: gray;
     }
     
     .content-panel {
@@ -43,6 +45,10 @@ body {
 .intro-body {
   padding: 8%;
   
+  .store-name {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+  }
+  
   .navbar {
     border-radius: 0;
   }
@@ -52,6 +58,9 @@ body {
     //border-top: 2px solid darken(lightgray, 10%);
     border-radius: 5px;
     
+    .intro-name {
+      padding: 20px;
+    }
     
     .intro-image {
       width: 100%;
@@ -62,6 +71,8 @@ body {
     border-radius: 5px;
     margin: 0 0 40px 0;
   }
+  
+
 }
 
 
@@ -120,17 +131,16 @@ h2 {
 .navbar {
   $nav-bg: desaturate(lighten(#0B0B3B, 18), 5);
   //$nav-bg-front: image-url('noise.png');
-  background: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
+  //background: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
+  background: #2E415B;
   
   .navbar-brand {
     color: white;
   }
   
-  li {
-    color: black;
-  }
-  
 }
+
+
 
 
 // Footer
@@ -200,7 +210,7 @@ input, textarea, select {
 }
 
 
-// buttons gr
+// buttons groups
 
 .row_buttons {
   display: block;
@@ -266,7 +276,8 @@ dl dd {
 // Pagination
 
 .pagination {
-  float: right;  
+  //float: right;  
+  margin: 0px;
   a {
     font-size: 0.8em;
   }

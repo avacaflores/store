@@ -6,6 +6,7 @@
   <div class="filters">
     <%= render 'shared/filters' %>
   </div>
+  <%= will_paginate %>
   <table class="table table-striped">
     <tbody>
       <% @products.each do |product| %>
@@ -23,7 +24,7 @@
           <span class="offer">
             <br>
             <%= number_to_currency(product.offer_price) %>
-            - Offer price
+            - <%= t('products.label.sale')%>
           </span>
           <% end %>
           <% if session[:user_id] %>
@@ -38,6 +39,9 @@
       <% end %>
     </tbody>
   </table>
+  <div class="will-paginate">
+    <%= will_paginate %>
+  </div>
   <% if session[:user_id] %>
   <hr>
   <%= link_to t('products.action.new'), new_product_path, class: 'btn btn-sm btn-primary' %>

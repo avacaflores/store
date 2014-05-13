@@ -12,7 +12,9 @@
   </head>
   <body class="intro-body">
     <div class="xcol-md-12 intro-page">
-      <h1><%= CONFIG[:store_name] %></h1>
+      <div class="center-label intro-name">
+        <img src="/assets/garaje4x4.png">
+      </div>
       <img src="/assets/background1.jpg" class="img-responsive intro-image" alt="Responsive image">
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
@@ -28,7 +30,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to t('products.promotion.title'), products_promotion_path %></li>
+              <li class="nav-item"><%= link_to t('products.promotion.title'), products_promotion_path %></li>
               <li><%= link_to t('products.title'), products_path %></li>
               <li>
               </li>

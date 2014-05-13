@@ -16,8 +16,8 @@
       <%= f.input :min_price, label: t('products.label.min_price'), input_html: { class: 'price-field' } %>
       <%= f.input :price, label: t('products.label.price'), input_html: { class: 'price-field' } %>
       <%= f.input :offer_price, label: t('products.label.offer_price'), input_html: { class: 'price-field' } %>
-      <%= f.input :offer, label: t('products.label.offer'), collection: [['Yes',true] ,['No',false]], input_html: { class: 'boolean-field' } %>
-      <%= f.input :promotion, label: t('products.label.promotion'), collection: [['Yes',true] ,['No',false]], input_html: { class: 'boolean-field' } %>
+      <%= f.input :offer, label: t('products.label.offer'), collection: [[t('booleans.true_value'),true] ,[t('booleans.false_value'),false]], input_html: { class: 'boolean-field' } %>
+      <%= f.input :promotion, label: t('products.label.promotion'), collection: [[t('booleans.true_value'),true] ,[t('booleans.false_value'),false]], input_html: { class: 'boolean-field' } %>
       <%= f.association :section, label: t('products.label.section'), error: false %>
       <%= f.label t('products.label.image') %>
       <%= f.file_field :photo, class: 'filestyle' %>

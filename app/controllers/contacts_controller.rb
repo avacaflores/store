@@ -31,10 +31,10 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        cookies[:client_name] = @contact.name
-        cookies[:client_email] = @contact.email
-        cookies[:client_phone] = @contact.phone
-        format.html { redirect_to @contact, notice: 'Message was successfully sent.' }
+        cookies.permanent[:client_name] = @contact.name
+        cookies.permanent[:client_email] = @contact.email
+        cookies.permanent[:client_phone] = @contact.phone
+        format.html { redirect_to @contact, notice: t('.message')}
         format.json { render action: 'show', status: :created, location: @contact }
       else
         format.html { render action: 'new' }

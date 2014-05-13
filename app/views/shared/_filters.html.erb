@@ -1,9 +1,10 @@
-<div class="container content-filter">
+<div class="content-filter">
   <% if session[:brands_filter].present? && session[:brands_filter].count >0 %>
-  Brands Filter: 
+  <%= t('brands.title') %> 
   <div class="btn-group">
     <% session[:brands_filter].each do |item| %>
-    <%= link_to item, remove_filter_brands_path(item), class: 'btn btn-xs btn-default' %>
+    <% @brand_name = Brand.find(item)%>
+    <%= link_to @brand_name.name, remove_filter_brands_path(item), class: 'btn btn-xs btn-default' %>
     <% end %>
     <%= link_to 'Remove All', remove_all_filters_brands_path, class: 'btn btn-xs btn-warning' %>
   </div>

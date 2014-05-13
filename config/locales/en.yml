@@ -1,27 +1,18 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
-en:
+en: 
   
-
+  helpers:
+      submit:
+        # product:
+        #   new: 'Nuevo Producto'
+        #   update: 'Actualizar Producto'
+        # brand:
+        #   new: 'Nueva Marca'
+        #   update: 'Actualizar Marca'
+        # user:
+        #   new: 'Nuevo Usuario'
+        #   update: 'Actualizar Usuario'
+        contact:
+          create: 'Send Message'
   
   action:
     edit: 'Edit'
@@ -31,26 +22,26 @@ en:
   
   general:
     request_login: 'Please log in.'
-  
-  layouts:
-    header:
-      
-    footer:
-      about: 'About'
-      contact: 'Contact'
-      
-  
+    address: 'Address:'
+    phone: 'Phone:'
+    email: 'eMail:'
   
   products:
     title: 'All Products'
     new:
       title: 'New Product'
+    create:
+      message: 'Product was successfully created.'
     edit:
-      title: 'Edit Product'
+      title: 'Edit Porduct'
+    update:
+      message: 'Product was successfully updated.'
+    destroy:
+      message: 'Product was successfully deleted.'
     show:
       title: 'Product Details'
     promotion:
-      title: 'Featured Products'
+      title: 'Futured Products'
     label:
       product: 'Product'
       part_number: 'Part Number'
@@ -59,15 +50,15 @@ en:
       price: 'Price'
       offer_price: 'Sale Price'
       min_price: 'Minimun Price'
-      offer: 'In Sale?'
-      promotion: 'Featured Product?'
+      offer: 'Sale?'
+      promotion: 'Futured Product?'
       section: 'Section'
       image: 'Image'
+      sale: 'Sale'
     action:
       list: 'Products List'
       new: 'New Product'
-      create: 'Create Product'
-  
+
   sections:
     title: 'Sections'
     
@@ -80,56 +71,77 @@ en:
     edit:
       title: 'Edit Brand'
     update:
-      message: 'Brand was successfully updated.'
+      message: 'Product was successfully updated.'
+    destroy:
+      message: 
+        one: "1 product was linked to the brand." 
+        other: "%{count} products were linked to the brand."  
     show:
       title: 'Brand Details'
     label:
-      brand: 'Brand'
       image: 'Image'
     action:
       list: 'Brands List'
       new: 'New Brand'
-      create: 'Create Brand'
     
-      
   contacts:
     title: 'Contacts'
     new:
-      title: 'New Contact'
-    edit:
-      title: 'Edit Contact'
+      title: 'Contact us'
+    create:
+      message: 'Message has been sent.'
     show:
-      title: 'Contact Details'
+      title: 'Message'
     label:
       name: 'Name'
       email: 'eMail'
       phone: 'Phone'
       message: 'Message'
     action:
-      new: 'Contact'
       create: 'Send Message'
+      info: 'Request Info'
 
   users:
     title: 'Users'
     new:
       title: 'New User'
+    create:
+      message: "User %{user} has been created."
     edit:
       title: 'Edit User'
+    update:
+      message: "%{user} has been updated."
+    destroy:
+      message: "User %{user} has been deleted." 
     show:
-      title: 'User Details'
+      title: 'user Details'
     label:
-      name: 'Username'
+      name: 'User'
       password: 'Password'
       password_confirmation: 'Password Confirmation'
     action:
       list: 'Users List'
       new: 'New User'
-      create: 'Create User'
-
-
-
   
-
+  sessions:
+    create:
+      message: 
+        login: "Welcome %{user}"
+        invalid: 'Invalid user/password combination.'
+    destroy:
+      message: 'Logged out'
       
-      
-  
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
+    
+  booleans:
+    true_value: 'Yes'
+    false_value: 'No'
+    
+  errors:
+    template:
+      header:
+        one: '1 error prohibited this form from being saved.'
+        other: '%{count} errors prohibited this form from being saved.'

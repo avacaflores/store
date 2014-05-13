@@ -7,7 +7,7 @@
   <span class="offer">
     <br>
     <%= number_to_currency(product.offer_price) %>
-    - Offer price
+    - <%= t('products.label.sale')%>
   </span>
   <% end %>
   <% if session[:user_id] %>

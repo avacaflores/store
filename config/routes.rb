@@ -19,7 +19,7 @@ Store::Application.routes.draw do
     resources :products
  
     get 'brands/:id/add_filter' => 'brands#add_filter', as: 'add_filter_brands'
-    get 'brands/:name/remove_filter' => 'brands#remove_filter', as: 'remove_filter_brands'
+    get 'brands/:id/remove_filter' => 'brands#remove_filter', as: 'remove_filter_brands'
     get 'brands/remove_all_filters' => 'brands#remove_all_filters', as: 'remove_all_filters_brands'
     resources :brands
 

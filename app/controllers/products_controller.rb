@@ -8,26 +8,27 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @sections = Section.all.order(:name)
-    @brands = Brand.all.order(:name)
-    @products_promo = Product.where('promotion' => true)
+    @brands = Brand.all.order(:id)
+    @products_promo = Product.promotion.paginate(page: params[:page]).order(:title)
+    @products = Product.brand(session[:brands_filter]).paginate(page: params[:page]).order(:title)
     
     if session[:sections_filter].nil? and session[:brands_filter].nil?
-      @products = Product.all
+      @products = Product.all.paginate(page: params[:page]).order(:title)
     else 
       if session[:sections_filter].nil?
-        @products = Product.joins(:brand).where( 'brands.name = ?', session[:brands_filter])
+        #@products = Product.brand(session[:brands_filter])
       else
         if session[:brands_filter].nil?
-          @products = Product.joins(:section).where( 'sections.name = ?', session[:sections_filter])
+          # @products = Product.joins(:section).where( 'sections.name = ?', session[:sections_filter])
         else
-          @products = Product.joins(:section,:brand).where( 'sections.name = ? AND brands.name = ?', session[:sections_filter],session[:brands_filter])
+          # @products = Product.joins(:section,:brand).where( 'sections.name = ? AND brands.name = ?', session[:sections_filter],session[:brands_filter])
         end
       end
     end
   end
   
   def promotion
-    @products_promo = Product.where('promotion' => true)
+    @products_promo = Product.promotion.paginate(page: params[:page]).order('title')
   end
 
   # GET /products/1
@@ -52,7 +53,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: t('.message') }
         format.json { render action: 'show', status: :created, location: @product }
       else
         format.html { render action: 'new' }
@@ -66,7 +67,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: t('.message') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -80,7 +81,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to products_url, notice: t('.message') }
       format.json { head :no_content }
     end
   end  
