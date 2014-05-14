@@ -28,4 +28,5 @@ module Store
   end
   
   WillPaginate.per_page = 10
+  ActsAsTaggableOn.force_lowercase = true
 end

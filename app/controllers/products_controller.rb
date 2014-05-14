@@ -10,22 +10,19 @@ class ProductsController < ApplicationController
     @sections = Section.all.order(:name)
     @brands = Brand.all.order(:id)
     @products_promo = Product.promotion.paginate(page: params[:page]).order(:title)
-    @products = Product.brand(session[:brands_filter]).paginate(page: params[:page]).order(:title)
     
-    if session[:sections_filter].nil? and session[:brands_filter].nil?
-      @products = Product.all.paginate(page: params[:page]).order(:title)
-    else 
-      if session[:sections_filter].nil?
-        #@products = Product.brand(session[:brands_filter])
+    if params[:tag]
+      session[:brands_filter] = nil
+      @products = Product.tagged_with(params[:tag]).paginate(page: params[:page]).order(:title)
+    else
+      if session[:brands_filter]
+        @products = Product.brand(session[:brands_filter]).paginate(page: params[:page]).order(:title)
       else
-        if session[:brands_filter].nil?
-          # @products = Product.joins(:section).where( 'sections.name = ?', session[:sections_filter])
-        else
-          # @products = Product.joins(:section,:brand).where( 'sections.name = ? AND brands.name = ?', session[:sections_filter],session[:brands_filter])
-        end
+        @products = Product.all.paginate(page: params[:page]).order(:title)
       end
     end
   end
+    
   
   def promotion
     @products_promo = Product.promotion.paginate(page: params[:page]).order('title')
@@ -94,7 +91,7 @@ class ProductsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id,
+    params.require(:product).permit(:title, :description, :price, :min_price, :part_number, :photo, :offer_price, :offer, :promotion, :brand_id, :section_id, :tag_list, :tag,
     :images_attributes => [:id,:url,:use,:image])
   end
 end

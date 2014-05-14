@@ -6,19 +6,18 @@
     <% @brand_name = Brand.find(item)%>
     <%= link_to @brand_name.name, remove_filter_brands_path(item), class: 'btn btn-xs btn-default' %>
     <% end %>
-    <%= link_to 'Remove All', remove_all_filters_brands_path, class: 'btn btn-xs btn-warning' %>
+    <%= link_to t('action.remove_all'), remove_all_filters_brands_path, class: 'btn btn-xs btn-warning' %>
   </div>
   <% end %>
 </div>
-<div class="container content-filter">
-  <% if session[:sections_filter].present? && session[:sections_filter].count >0 %>
-  Sections Filter: 
-  <div class="btn-group">
-    <% session[:sections_filter].each do |item| %>
-    <%= link_to item, remove_filter_sections_path(item), class: 'btn btn-xs btn-default' %>
-    <% end %>
-    <%= link_to 'Remove All', remove_all_filters_sections_path, class: 'btn btn-xs btn-warning' %>
-  </div>
+<div class="content-filter">
+  <% if params[:tag] %>
+  <%= t('general.category') %>
+  <div class="btn-group"> 
+  <%= link_to params[:tag], products_path, class: 'btn btn-xs btn-default' %>
+  <%= link_to t('action.remove'), products_path, class: 'btn btn-xs btn-warning' %> 
+</div>
   <% end %>
 </div>
+
 

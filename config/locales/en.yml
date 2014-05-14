@@ -15,16 +15,14 @@ en:
           create: 'Send Message'
   
   action:
-    edit: 'Edit'
-    delete: 'Delete'
     confirm: 'Are you sure?'
-    cancel: 'Cancel'
   
   general:
     request_login: 'Please log in.'
     address: 'Address:'
     phone: 'Phone:'
     email: 'eMail:'
+    categories: 'Categories'
   
   products:
     title: 'All Products'
@@ -53,6 +51,8 @@ en:
       offer: 'Sale?'
       promotion: 'Futured Product?'
       section: 'Section'
+      categories: 'Categories'
+      categories_hint: "Comma seperated"
       image: 'Image'
       sale: 'Sale'
     action:

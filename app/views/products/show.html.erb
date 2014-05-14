@@ -36,8 +36,8 @@
               <%= row_content t('booleans.false_value') %>
             <% end %>
           <% end %>
-        <%= row_title t('products.label.section') %>
-        <%= row_content @product.section.name unless @product.section.nil? %>
+        <%= row_title t('products.label.categories') %>
+        <%= row_content @product.tag_list %>
       </dl>
       <hr>
       <%= link_to t('products.action.list'), products_path, class: 'btn btn-sm btn-default' %>

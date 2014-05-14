@@ -15,6 +15,7 @@ Store::Application.routes.draw do
   
     root :to => "static_pages#home"
  
+    get 'tag_filter/:tag' => 'products#index', as: 'tag_filter'
     get 'products/promotion' => 'products#promotion'
     resources :products
  
@@ -22,11 +23,6 @@ Store::Application.routes.draw do
     get 'brands/:id/remove_filter' => 'brands#remove_filter', as: 'remove_filter_brands'
     get 'brands/remove_all_filters' => 'brands#remove_all_filters', as: 'remove_all_filters_brands'
     resources :brands
-
-    get 'sections/:id/add_filter' => 'sections#add_filter', as: 'add_filter_sections'
-    get 'sections/:name/remove_filter' => 'sections#remove_filter', as: 'remove_filter_sections'
-    get 'sections/remove_all_filters' => 'sections#remove_all_filters', as: 'remove_all_filters_sections'
-    resources :sections
 
     resources :users
 

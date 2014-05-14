@@ -30,12 +30,16 @@ es:
     delete: 'Eliminar'
     confirm: 'Esta seguro?'
     cancel: 'Cancelar'
+    remove: 'Remover'
+    remove_all: 'Remover Todas'
   
   general:
     request_login: 'Por favor introduzca su log in.'
     address: 'Dirección:'
     phone: 'Teléfono:'
     email: 'eMail:'
+    categories: 'Categorías'
+    category: 'Categoría'
   
   products:
     title: 'Todos los Productos'
@@ -64,6 +68,8 @@ es:
       offer: 'En Oferta?'
       promotion: 'Producto Destacado?'
       section: 'Sección'
+      categories: 'Categorías'
+      categories_hint: "* Categorías separadas por comas"
       image: 'Imagen'
       sale: 'Oferta'
     action:

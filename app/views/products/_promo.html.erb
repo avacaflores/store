@@ -13,7 +13,7 @@
   <% if session[:user_id] %>
   <div class="btn-group btn-to-right2">
     <%= link_to t('action.edit'), edit_product_path(product), class: 'btn btn-xs btn-default' %>
-    <%= link_to t('action.delete'), product_path(product), method: :delete, data: { confirm: t('action.edit') }, class: 'btn btn-xs btn-danger' %>
+    <%= link_to t('action.delete'), product_path(product), method: :delete, data: { confirm: t('action.confirm') }, class: 'btn btn-xs btn-danger' %>
   </div>
   <% end %>
 </div>
