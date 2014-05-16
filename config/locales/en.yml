@@ -39,7 +39,7 @@ en:
     show:
       title: 'Product Details'
     promotion:
-      title: 'Futured Products'
+      title: 'Featured Products'
     label:
       product: 'Product'
       part_number: 'Part Number'
@@ -49,7 +49,7 @@ en:
       offer_price: 'Sale Price'
       min_price: 'Minimun Price'
       offer: 'Sale?'
-      promotion: 'Futured Product?'
+      promotion: 'Featured Product?'
       section: 'Section'
       categories: 'Categories'
       categories_hint: "Comma seperated"

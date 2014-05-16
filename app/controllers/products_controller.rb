@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @sections = Section.all.order(:name)
-    @brands = Brand.all.order(:id)
+    @brands = Brand.all.order(:name)
     @products_promo = Product.promotion.paginate(page: params[:page]).order(:title)
     
     if params[:tag]
