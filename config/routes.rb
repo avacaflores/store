@@ -15,7 +15,10 @@ Store::Application.routes.draw do
   
     root :to => "static_pages#home"
  
-    get 'tag_filter/:tag' => 'products#index', as: 'tag_filter'
+    get 'clear_brand' => 'products#clear_brand', as: 'clear_brand'
+    get 'clear_search' => 'products#clear_search', as: 'clear_search'
+    get 'clear_tag' => 'products#clear_tag', as: 'clear_tag'
+    #get 'tag_filter/:tag' => 'products#index', as: 'tag_filter'
     get 'products/promotion' => 'products#promotion'
     resources :products
  

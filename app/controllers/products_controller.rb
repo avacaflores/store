@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  skip_before_action :authorize, only: [:index, :show, :promotion]
+  skip_before_action :authorize, only: [:index, :show, :promotion, :clear_search, :clear_tag, :clear_brand]
   
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -11,18 +11,54 @@ class ProductsController < ApplicationController
     @brands = Brand.all.order(:name)
     @products_promo = Product.promotion.paginate(page: params[:page]).order(:title)
     
-    if params[:tag]
-      session[:brands_filter] = nil
-      @products = Product.tagged_with(params[:tag]).paginate(page: params[:page]).order(:title)
-    else
-      if session[:brands_filter]
-        @products = Product.brand(session[:brands_filter]).paginate(page: params[:page]).order(:title)
-      else
-        @products = Product.all.paginate(page: params[:page]).order(:title)
-      end
-    end
-  end
+    @products = Product.order(:title).paginate(page: params[:page])
     
+    if params[:tag].present?
+      session[:tag_filter] ||= []
+      session[:tag_filter] = params[:tag]
+    else
+      params[:tag] = session[:tag_filter] if session[:tag_filter]
+    end
+    
+    if params[:brand].present?
+      session[:brand_filter] ||= []
+      session[:brand_filter] = params[:brand]
+    else
+      params[:brand] = session[:brand_filter] if session[:brand_filter]
+    end
+    
+    if params[:search].present?
+      session[:search_filter] ||= []
+      session[:search_filter] = params[:search]
+    else
+      params[:search] = session[:search_filter] if session[:search_filter]
+    end
+    
+
+    
+    @products = @products.tagged_with(params[:tag]).paginate(page: params[:page]) if params[:tag].present?
+    @products = @products.brandname(params[:brand]).paginate(page: params[:page]) if params[:brand].present?
+    @products = @products.search(params[:search]).paginate(page: params[:page]) if params[:search].present?
+    
+  end
+
+  def clear_brand
+    params[:brand] = nil
+    session[:brand_filter] = nil
+    redirect_to products_path(search: params[:search],tag: params[:tag])
+  end  
+  
+  def clear_search
+    params[:search] = nil
+    session[:search_filter] = nil
+    redirect_to products_path(search: params[:search],tag: params[:tag])
+  end  
+  
+  def clear_tag
+    params[:tag] = nil
+    session[:tag_filter] = nil
+    redirect_to products_path(search: params[:search],tag: params[:tag])
+  end  
   
   def promotion
     @products_promo = Product.promotion.paginate(page: params[:page]).order('title')

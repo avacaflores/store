@@ -11,6 +11,7 @@ CONFIG = YAML.load(File.read(File.expand_path('../config.yml', __FILE__)))
 #CONFIG.merge! CONFIG.fetch(Rails.env, {})
 CONFIG.symbolize_keys!
 
+
 module Store
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -26,6 +27,8 @@ module Store
     # config.i18n.default_locale = :de
     
   end
+  
+  
   
   WillPaginate.per_page = 10
   ActsAsTaggableOn.force_lowercase = true

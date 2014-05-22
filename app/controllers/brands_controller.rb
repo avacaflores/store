@@ -1,8 +1,8 @@
 class BrandsController < ApplicationController
   
-  skip_before_action :authorize, only: [:add_filter, :remove_filter, :remove_all_filters]
+  skip_before_action :authorize, only: [:add_filter, :remove_filter]
   
-  before_action :set_brand, only: [:show, :edit, :update, :destroy, :add_filter, :remove_filter]
+  before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
   # GET /brands
   # GET /brands.json
@@ -63,23 +63,6 @@ class BrandsController < ApplicationController
       format.html { redirect_to brands_url, flash: { warning: t('.message', count: linked_count) } }
       format.json { head :no_content }
     end
-  end
-  
-  def add_filter
-    session[:brands_filter] ||= []
-    session[:brands_filter] << @brand.id unless session[:brands_filter].include?(@brand.id)
-    redirect_to products_path 
-  end
-  
-  def remove_filter
-    session[:brands_filter].delete(@brand.id)
-    session[:brands_filter] = nil unless session[:brands_filter].count > 0
-    redirect_to products_path
-  end
-  
-  def remove_all_filters
-    session[:brands_filter] = nil
-    redirect_to products_path
   end
 
   private

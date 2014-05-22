@@ -1,23 +1,36 @@
-<div class="content-filter">
-  <% if session[:brands_filter].present? && session[:brands_filter].count >0 %>
-  <%= t('brands.title') %> 
-  <div class="btn-group">
-    <% session[:brands_filter].each do |item| %>
-    <% @brand_name = Brand.find(item)%>
-    <%= link_to @brand_name.name, remove_filter_brands_path(item), class: 'btn btn-xs btn-default' %>
+<div class="row filter-bar">
+  <div class="col-md-6 content-bar">
+    <span class="count">
+      <%= t('general.count')%>
+      <%= @products.count %>
+    </span>
+    <% if params[:search]%>
+    <span class="filter-element">
+      <%= params[:search] %>
+      <%= link_to content_tag(:span, ' x', class: "filter-x"), clear_search_path(search: params[:search],tag: params[:tag],brand: params[:brand]) %>
+    </span>
     <% end %>
-    <%= link_to t('action.remove_all'), remove_all_filters_brands_path, class: 'btn btn-xs btn-warning' %>
+    <% if params[:tag] && params[:tag] != "" %>
+    <span class="filter-element">
+      <%= params[:tag] %>
+      <%= link_to content_tag(:span, ' x', class: "filter-x"), clear_tag_path(search: params[:search],tag: params[:tag],brand: params[:brand]) %>
+    </span>
+    <% end %>
+    <% if params[:brand] && params[:brand] != "" %>
+    <span class="filter-element">
+      <%= params[:brand] %>
+      <%= link_to content_tag(:span, ' x', class: "filter-x"), clear_brand_path(search: params[:search],tag: params[:tag],brand: params[:brand]) %>
+    </span>
+    <% end %>
   </div>
-  <% end %>
-</div>
-<div class="content-filter">
-  <% if params[:tag] %>
-  <%= t('general.category') %>
-  <div class="btn-group"> 
-  <%= link_to params[:tag], products_path, class: 'btn btn-xs btn-default' %>
-  <%= link_to t('action.remove'), products_path, class: 'btn btn-xs btn-warning' %> 
-</div>
-  <% end %>
+  <div class="col-md-6 search-bar">
+    <%= form_tag products_path, method: 'get' do %>
+    <%= submit_tag t('general.search'), name: nil %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :tag, params[:tag], hidden: true %>
+    <%= text_field_tag :brand, params[:brand], hidden: true %>
+    <% end %>
+  </div>
 </div>
 
 

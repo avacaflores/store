@@ -23,6 +23,8 @@ en:
     phone: 'Phone:'
     email: 'eMail:'
     categories: 'Categories'
+    search: 'Search'
+    count: 'Products : '
   
   products:
     title: 'All Products'

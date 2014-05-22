@@ -40,6 +40,8 @@ es:
     email: 'eMail:'
     categories: 'Categorías'
     category: 'Categoría'
+    search: 'Busqueda'
+    count: 'Productos : '
   
   products:
     title: 'Todos los Productos'

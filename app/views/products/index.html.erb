@@ -50,7 +50,9 @@
 <div class="col-sm-2">
   <h2><%= t('general.categories') %></h2>
   <% tag_cloud Product.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
-    <%= link_to tag.name, tag_filter_path(tag.name), class: css_class %>
+
+    <%= link_to tag.name, products_path(search: params[:search],tag: tag.name, brand: params[:brand]), class: css_class %>
+    
   <% end %>
   <h2><%= t('brands.title') %></h2>
   <%= render @brands %>

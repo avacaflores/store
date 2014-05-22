@@ -26,266 +26,301 @@ body {
     .content-alert {
       margin: 0 0 10px 0;
     }
-    
-    .content-filter {
-      margin: 0 0 10px 0;
-      font-size: 0.9em;
-      color: gray;
+  
+    .filter-bar {
+      padding: 2px 0 0 0;
+      margin: 5px 0 5px 0;
+      background-color: #3D8CC5;
+      border: 1px solid #3D8CC5;
+      border-radius: 5px;
+  
+      input {
+        color: black;
+        width: auto;
+        margin: 0 0 3px 3px;
+        float: right;
+      }
+      #search {
+        margin: 1px 0 0 0;
+      }
+  
+      .content-bar {
+        margin: 4px 0 0 0;
+        padding: 0 0 0 4px;
+        font-size: 0.9em;
+      }
+      .search-bar {
+        margin: 1px 0 0 0;
+        padding: 0 4px 0 0;
+        font-size: 0.9em;
+      }
+      .filter-element {
+        padding: 2px 10px 2px 10px;
+        margin: 2px 4px 0 0;
+        background-color: lightgray;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        color: black;
+        width: auto;
+        
+        .filter-x {
+          margin: 0 0 0 5px;
+          color: #3D8CC5;
+        }      
+      }
+      .count {
+        padding: 2px 10px 2px 10px;
+        margin: 2px 4px 0 0;
+        border-radius: 5px;
+        color: white;
+        width: auto;
+      }
+      .content-panel {
+        padding: 10px;
+      }
     }
+  }
+}
+
+
+  // Intro page
+
+  .intro-body {
+    padding: 8%;
+  
+    .store-name {
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+    }
+    .navbar {
+      border-radius: 0;
+    }
+    .intro-page {
+      background: white;
+      //border-top: 2px solid darken(lightgray, 10%);
+      border-radius: 5px;
     
-    .content-panel {
+      .intro-name {
+        padding: 20px;
+      } 
+      .intro-image {
+        width: 100%;
+      }
+    }
+    .intro-footer {
+      border-radius: 5px;
+      margin: 0 0 40px 0;
+    }
+  }
+
+
+
+  // Alerts
+  .alert {
+    margin: 10px 0 0 0;
+  }
+
+
+  // Typography
+
+  h1 {
+    font-size: 2.2em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: normal;
+    color: $gray-light;
+  }
+
+  // Intro footer
+
+  .footer-table {
+    width: 100%;
+  
+    td { 
+      vertical-align:bottom;
+    }
+    .address {
+      color: $gray;
+      float: left;
+      padding: 10px;
+    }
+    .language {
+      float: right;
       padding: 10px;
     }
   }
-}
 
 
-// Intro page
+  // Panel
 
-.intro-body {
-  padding: 8%;
-  
-  .store-name {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+  .panel {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   }
-  
+
+
+  // Navbar
+
   .navbar {
-    border-radius: 0;
-  }
+    $nav-bg: desaturate(lighten(#0B0B3B, 18), 5);
+    //$nav-bg-front: image-url('noise.png');
+    //background: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
+    background: #2E415B;
   
-  .intro-page {
+    .navbar-brand {
+      color: white;
+    }
+  }
+
+
+  // Footer
+
+  .footer {
     background: white;
-    //border-top: 2px solid darken(lightgray, 10%);
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $gray-light;
+    color: $gray-light;
+    a {
+      color: $gray;
+      &:hover {
+        color: $gray-darker;
+      }
+    }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    ul {
+      margin: 0;
+      padding: 0px;
+      list-style: none;
+      li {
+        margin: 0 15px 0 15px;
+      }
+    }
+  }
+
+
+  // Forms
+
+  input, textarea, select {
+    width: 100%;
+    border: 1px solid #bbb;
     border-radius: 5px;
-    
-    .intro-name {
-      padding: 20px;
+    margin-bottom: 5px;  
+
+    &.filestyle {
+      border: 0px;
     }
     
-    .intro-image {
-      width: 100%;
+    &.price-field {
+      width: 50%;
     }
+    
+    &.boolean-field {
+      width: 20%;
+    }
+
+    &.btn {
+      height: auto;
+      width: auto;
+    }
+
   }
   
-  .intro-footer {
+
+  // offer price
+  
+  .offer {
+    color: red;
+  }
+
+
+  // buttons groups
+
+  .row_buttons {
+    display: block;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid gray;
     border-radius: 5px;
-    margin: 0 0 40px 0;
   }
-  
 
-}
-
-
-
-// Alerts
-.alert {
-  margin: 10px 0 0 0;
-}
-
-
-// Typography
-
-h1 {
-  font-size: 2.2em;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.6em;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
-
-// Intro footer
-
-.footer-table {
-  width: 100%;
-  
-  td {
-    
-    vertical-align:bottom;
-  }
-  .address {
-    color: $gray;
-    float: left;
-    padding: 10px;
-  }
-  .language {
-    float: right;
-    padding: 10px;
-  }
-}
-
-
-// Panel
-
-.panel {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-}
-
-
-// Navbar
-
-.navbar {
-  $nav-bg: desaturate(lighten(#0B0B3B, 18), 5);
-  //$nav-bg-front: image-url('noise.png');
-  //background: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-  background: #2E415B;
-  
-  .navbar-brand {
-    color: white;
-  }
-  
-}
-
-
-// Footer
-
-.footer {
-  background: white;
-  margin-top: 45px;
-  margin-bottom: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  .left {
-    float: left;
-  }
-  .right {
+  .btn-to-right {
     float: right;
   }
-  ul {
-    margin: 0;
-    padding: 0px;
-    list-style: none;
-    li {
-      margin: 0 15px 0 15px;
-    }
-  }
-}
 
 
-// Forms
+  // table for show
 
-input, textarea, select {
-  width: 100%;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  margin-bottom: 5px;  
-
-  &.filestyle {
-    border: 0px;
-  }
-    
-  &.price-field {
-    width: 50%;
-  }
-    
-  &.boolean-field {
-    width: 20%;
+  dl dt {
+    padding: 5px;
   }
 
-  &.btn {
-    height: auto;
-    width: auto;
+  dl dd {
+    padding: 5px;
+    margin: 5px;
+    background-color: #F3F3F3;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
   }
 
-}
-  
-
-// offer price
-  
-.offer {
-  color: red;
-}
-
-
-// buttons groups
-
-.row_buttons {
-  display: block;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  background-color: lightgray;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
-.btn-to-right {
-  float: right;
-}
-
-
-// table for show
-
-dl dt {
-  padding: 5px;
-}
-
-dl dd {
-  padding: 5px;
-  margin: 5px;
-  background-color: #F3F3F3;
-  border: 1px solid #F3F3F3;
-  border-radius: 5px;
-}
-
-.image-row {
-  background-color: white;
-  //border: 1px solid white;
-}
-
-
-// center label
-
-.center-label {
-  text-align: center;
-}
-
-
-
-//.navbar {
-//   background-color: transparent;
-//   background: transparent;
-//   border: 0;
-//   height: 60px;
-//   li {
-//     color: black;
-// }
-//}
-//
-//.navbar .nav > li > a {
-//    #float: none;
-//    #line-height: 19px;
-//    #padding: 9px 10px 11px;
-//    #text-decoration: none;
-//    #text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-//    color:  black;
-//}
-
-// Pagination
-
-.pagination {
-  //float: right;  
-  margin: 0px;
-  a {
-    font-size: 0.8em;
+  .image-row {
+    background-color: white;
+    //border: 1px solid white;
   }
-}
 
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
+  // center label
+
+  .center-label {
+    text-align: center;
+  }
+
+
+
+  //.navbar {
+    //   background-color: transparent;
+    //   background: transparent;
+    //   border: 0;
+    //   height: 60px;
+    //   li {
+      //     color: black;
+      // }
+      //}
+      //
+      //.navbar .nav > li > a {
+        //    #float: none;
+        //    #line-height: 19px;
+        //    #padding: 9px 10px 11px;
+        //    #text-decoration: none;
+        //    #text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        //    color:  black;
+        //}
+
+        // Pagination
+
+        .pagination {
+          //float: right;  
+          margin: 0px;
+          a {
+            font-size: 0.8em;
+          }
+        }
+
+
+        .css1 { font-size: 1.0em; }
+        .css2 { font-size: 1.2em; }
+        .css3 { font-size: 1.4em; }
+        .css4 { font-size: 1.6em; }
 
       
