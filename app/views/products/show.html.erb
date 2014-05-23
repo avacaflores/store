@@ -15,7 +15,11 @@
         <%= row_title t('products.label.description') %>
         <%= row_content simple_format(@product.description) %>
         <%= row_title t('products.label.link_product') %>
-        <%= row_content link_to @product.link_product, @product.link_product, target: '_blank' if @product.link_product %>
+        <% if @product.link_product %>
+          <%= row_content link_to @product.link_product, @product.link_product, target: '_blank'  %>
+        <% else %>
+          <%= row_content @product.link_product %>
+        <% end %>
         <%= row_title t('products.label.price') %>
         <%= row_content number_to_currency(@product.price) %>
         <% if @product.offer %>
