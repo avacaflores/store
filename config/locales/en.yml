@@ -24,7 +24,7 @@ en:
     email: 'eMail:'
     categories: 'Categories'
     search: 'Search'
-    count: 'Products : '
+    count: '#:'
   
   products:
     title: 'All Products'
@@ -47,6 +47,7 @@ en:
       part_number: 'Part Number'
       brand: 'Brand'
       description: 'Description'
+      link_product: 'Link'
       price: 'Price'
       offer_price: 'Sale Price'
       min_price: 'Minimun Price'

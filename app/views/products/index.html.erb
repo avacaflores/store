@@ -1,11 +1,11 @@
+<div class="col-sm-12 filters">
+  <%= render 'shared/filters' %>
+</div>
 <div class="col-sm-2">
   <h2><%= t('products.promotion.title') %></h2>
   <%= render partial: 'promo' %>
 </div>
 <div class="col-sm-8">
-  <div class="filters">
-    <%= render 'shared/filters' %>
-  </div>
   <%= will_paginate %>
   <table class="table table-striped">
     <tbody>
@@ -13,8 +13,8 @@
       <tr>
         <td class='col-md-2 col-sm-3 col-xs-4'>
           <div class="thumbnail">
-          <%= link_to image_tag(product.photo.url(:thumb)), product_path(product) %>
-        </div>
+            <%= link_to image_tag(product.photo.url(:thumb)), product_path(product) %>
+          </div>
         </td>
         <td><strong><%= product.title %></strong><br>
           <strong>(<%= product.brand.name unless product.brand.nil? %>)</strong><br>
@@ -51,7 +51,7 @@
   <h2><%= t('general.categories') %></h2>
   <% tag_cloud Product.tag_counts, %w[css1 css2 css3 css4] do |tag, css_class| %>
 
-    <%= link_to tag.name, products_path(search: params[:search],tag: tag.name, brand: params[:brand]), class: css_class %>
+  <%= link_to tag.name, products_path(search: params[:search],tag: tag.name, brand: params[:brand]), class: css_class %>
     
   <% end %>
   <h2><%= t('brands.title') %></h2>

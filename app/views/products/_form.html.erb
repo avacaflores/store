@@ -13,6 +13,7 @@
       <%= f.input :part_number, label: t('products.label.part_number') %>
       <%= f.association :brand, label: t('products.label.brand'), error: false %>
       <%= f.input :description, label: t('products.label.description'), as: :text, input_html: { rows: 8 } %>
+      <%= f.input :link_product, label: t('products.label.link_product') %>
       <%= f.input :min_price, label: t('products.label.min_price'), input_html: { class: 'price-field' } %>
       <%= f.input :price, label: t('products.label.price'), input_html: { class: 'price-field' } %>
       <%= f.input :offer_price, label: t('products.label.offer_price'), input_html: { class: 'price-field' } %>

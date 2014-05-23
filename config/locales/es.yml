@@ -41,7 +41,7 @@ es:
     categories: 'Categorías'
     category: 'Categoría'
     search: 'Busqueda'
-    count: 'Productos : '
+    count: '#:'
   
   products:
     title: 'Todos los Productos'
@@ -64,6 +64,7 @@ es:
       part_number: 'Número de Parte'
       brand: 'Marca'
       description: 'Descripción'
+      link_product: 'Enlace'
       price: 'Precio'
       offer_price: 'Precio de Oferta'
       min_price: 'Precio Mínimo'
